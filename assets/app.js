@@ -472,7 +472,7 @@
           landkreise[agsPadded] = value;
           const optionElement = document.createElement("option");
           optionElement.setAttribute("value", agsPadded);
-          optionElement.innerText = `${value.name} (${agsPadded})`;
+          optionElement.innerText = `${value.name}`;
           document.getElementById("landkreisSelect").appendChild(optionElement);
         }
       }
