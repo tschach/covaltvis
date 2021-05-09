@@ -1,178 +1,222 @@
 {
-  "8111": {
-    "name": "Stuttgart, Stadtkreis",
-    "bundeslandId": 8
-  },
-  "8115": {
-    "name": "Böblingen",
-    "bundeslandId": 8
-  },
-  "8116": {
-    "name": "Esslingen",
-    "bundeslandId": 8
-  },
-  "8117": {
-    "name": "Göppingen",
-    "bundeslandId": 8
-  },
-  "8118": {
-    "name": "Ludwigsburg",
-    "bundeslandId": 8
-  },
-  "8119": {
-    "name": "Rems-Murr-Kreis",
-    "bundeslandId": 8
-  },
-  "8121": {
-    "name": "Heilbronn, Stadtkreis",
-    "bundeslandId": 8
-  },
-  "8125": {
-    "name": "Heilbronn",
-    "bundeslandId": 8
-  },
-  "8126": {
-    "name": "Hohenlohekreis",
-    "bundeslandId": 8
-  },
-  "8127": {
-    "name": "Schwäbisch Hall",
-    "bundeslandId": 8
-  },
-  "8128": {
-    "name": "Main-Tauber-Kreis",
-    "bundeslandId": 8
-  },
-  "8135": {
-    "name": "Heidenheim",
-    "bundeslandId": 8
-  },
-  "8136": {
-    "name": "Ostalbkreis",
-    "bundeslandId": 8
-  },
-  "8211": {
-    "name": "Baden-Baden, Stadtkreis",
-    "bundeslandId": 8
-  },
-  "8212": {
-    "name": "Karlsruhe, Stadtkreis",
-    "bundeslandId": 8
-  },
-  "8215": {
-    "name": "Karlsruhe",
-    "bundeslandId": 8
-  },
-  "8216": {
-    "name": "Rastatt",
-    "bundeslandId": 8
-  },
-  "8221": {
-    "name": "Heidelberg, Stadtkreis",
-    "bundeslandId": 8
-  },
-  "8222": {
-    "name": "Mannheim, Stadtkreis",
-    "bundeslandId": 8
-  },
-  "8225": {
-    "name": "Neckar-Odenwald-Kreis",
-    "bundeslandId": 8
-  },
-  "8226": {
-    "name": "Rhein-Neckar-Kreis",
-    "bundeslandId": 8
-  },
-  "8231": {
-    "name": "Pforzheim, Stadtkreis",
-    "bundeslandId": 8
-  },
-  "8235": {
-    "name": "Calw",
-    "bundeslandId": 8
-  },
-  "8236": {
-    "name": "Enzkreis",
-    "bundeslandId": 8
-  },
-  "8237": {
-    "name": "Freudenstadt",
-    "bundeslandId": 8
-  },
-  "8311": {
-    "name": "Freiburg im Breisgau, Stadtkreis",
-    "bundeslandId": 8
-  },
-  "8315": {
-    "name": "Breisgau-Hochschwarzwald",
-    "bundeslandId": 8
-  },
-  "8316": {
-    "name": "Emmendingen",
-    "bundeslandId": 8
-  },
-  "8317": {
-    "name": "Ortenaukreis",
-    "bundeslandId": 8
-  },
-  "8325": {
-    "name": "Rottweil",
-    "bundeslandId": 8
-  },
-  "8326": {
-    "name": "Schwarzwald-Baar-Kreis",
-    "bundeslandId": 8
-  },
-  "8327": {
-    "name": "Tuttlingen",
-    "bundeslandId": 8
-  },
-  "8335": {
-    "name": "Konstanz",
-    "bundeslandId": 8
-  },
-  "8336": {
-    "name": "Lörrach",
-    "bundeslandId": 8
-  },
-  "8337": {
-    "name": "Waldshut",
-    "bundeslandId": 8
-  },
-  "8415": {
-    "name": "Reutlingen",
-    "bundeslandId": 8
-  },
-  "8416": {
-    "name": "Tübingen",
-    "bundeslandId": 8
-  },
-  "8417": {
-    "name": "Zollernalbkreis",
-    "bundeslandId": 8
-  },
-  "8421": {
-    "name": "Ulm, Stadtkreis",
-    "bundeslandId": 8
-  },
-  "8425": {
+  "08425": {
     "name": "Alb-Donau-Kreis",
+    "sorting": "Alb-Donau-Kreis",
     "bundeslandId": 8
   },
-  "8426": {
-    "name": "Biberach",
+  "08211": {
+    "name": "Stadt Baden-Baden",
+    "sorting": "Baden-Baden",
     "bundeslandId": 8
   },
-  "8435": {
+  "08426": {
+    "name": "Landkreis Biberach",
+    "sorting": "Biberach",
+    "bundeslandId": 8
+  },
+  "08115": {
+    "name": "Landkreis Böblingen",
+    "sorting": "Böblingen",
+    "bundeslandId": 8
+  },
+  "08435": {
     "name": "Bodenseekreis",
+    "sorting": "Bodenseekreis",
     "bundeslandId": 8
   },
-  "8436": {
-    "name": "Ravensburg",
+  "08315": {
+    "name": "Landkreis Breisgau-Hochschwarzwald",
+    "sorting": "Breisgau-Hochschwarzwald",
     "bundeslandId": 8
   },
-  "8437": {
-    "name": "Sigmaringen",
+  "08235": {
+    "name": "Landkreis Calw",
+    "sorting": "Calw",
+    "bundeslandId": 8
+  },
+  "08316": {
+    "name": "Landkreis Emmendingen",
+    "sorting": "Emmendingen",
+    "bundeslandId": 8
+  },
+  "08236": {
+    "name": "Enzkreis",
+    "sorting": "Enzkreis",
+    "bundeslandId": 8
+  },
+  "08116": {
+    "name": "Landkreis Esslingen",
+    "sorting": "Esslingen",
+    "bundeslandId": 8
+  },
+  "08311": {
+    "name": "Stadt Freiburg im Breisgau",
+    "sorting": "Freiburg im Breisgau",
+    "bundeslandId": 8
+  },
+  "08237": {
+    "name": "Landkreis Freudenstadt",
+    "sorting": "Freudenstadt",
+    "bundeslandId": 8
+  },
+  "08117": {
+    "name": "Landkreis Göppingen",
+    "sorting": "Göppingen",
+    "bundeslandId": 8
+  },
+  "08221": {
+    "name": "Stadt Heidelberg",
+    "sorting": "Heidelberg",
+    "bundeslandId": 8
+  },
+  "08135": {
+    "name": "Landkreis Heidenheim",
+    "sorting": "Heidenheim",
+    "bundeslandId": 8
+  },
+  "08125": {
+    "name": "Landkreis Heilbronn",
+    "sorting": "Heilbronn LK",
+    "bundeslandId": 8
+  },
+  "08121": {
+    "name": "Stadt Heilbronn",
+    "sorting": "Heilbronn SK",
+    "bundeslandId": 8
+  },
+  "08126": {
+    "name": "Hohenlohekreis",
+    "sorting": "Hohenlohekreis",
+    "bundeslandId": 8
+  },
+  "08215": {
+    "name": "Landkreis Karlsruhe",
+    "sorting": "Karlsruhe",
+    "bundeslandId": 8
+  },
+  "08212": {
+    "name": "Stadt Karlsruhe",
+    "sorting": "Karlsruhe,",
+    "bundeslandId": 8
+  },
+  "08335": {
+    "name": "Landkreis Konstanz",
+    "sorting": "Konstanz",
+    "bundeslandId": 8
+  },
+  "08336": {
+    "name": "Landkreis Lörrach",
+    "sorting": "Lörrach",
+    "bundeslandId": 8
+  },
+  "08118": {
+    "name": "Landkreis Ludwigsburg",
+    "sorting": "Ludwigsburg",
+    "bundeslandId": 8
+  },
+  "08128": {
+    "name": "Main-Tauber-Kreis",
+    "sorting": "Main-Tauber-Kreis",
+    "bundeslandId": 8
+  },
+  "08222": {
+    "name": "Stadt Mannheim",
+    "sorting": "Mannheim",
+    "bundeslandId": 8
+  },
+  "08225": {
+    "name": "Neckar-Odenwald-Kreis",
+    "sorting": "Neckar-Odenwald-Kreis",
+    "bundeslandId": 8
+  },
+  "08317": {
+    "name": "Ortenaukreis",
+    "sorting": "Ortenaukreis",
+    "bundeslandId": 8
+  },
+  "08136": {
+    "name": "Ostalbkreis",
+    "sorting": "Ostalbkreis",
+    "bundeslandId": 8
+  },
+  "08231": {
+    "name": "Stadt Pforzheim",
+    "sorting": "Pforzheim",
+    "bundeslandId": 8
+  },
+  "08216": {
+    "name": "Landkreis Rastatt",
+    "sorting": "Rastatt",
+    "bundeslandId": 8
+  },
+  "08436": {
+    "name": "Landkreis Ravensburg",
+    "sorting": "Ravensburg",
+    "bundeslandId": 8
+  },
+  "08119": {
+    "name": "Rems-Murr-Kreis",
+    "sorting": "Rems-Murr-Kreis",
+    "bundeslandId": 8
+  },
+  "08415": {
+    "name": "Landkreis Reutlingen",
+    "sorting": "Reutlingen",
+    "bundeslandId": 8
+  },
+  "08226": {
+    "name": "Rhein-Neckar-Kreis",
+    "sorting": "Rhein-Neckar-Kreis",
+    "bundeslandId": 8
+  },
+  "08325": {
+    "name": "Landkreis Rottweil",
+    "sorting": "Rottweil",
+    "bundeslandId": 8
+  },
+  "08127": {
+    "name": "Landkreis Schwäbisch Hall",
+    "sorting": "Schwäbisch Hall",
+    "bundeslandId": 8
+  },
+  "08326": {
+    "name": "Schwarzwald-Baar-Kreis",
+    "sorting": "Schwarzwald-Baar-Kreis",
+    "bundeslandId": 8
+  },
+  "08437": {
+    "name": "Landkreis Sigmaringen",
+    "sorting": "Sigmaringen",
+    "bundeslandId": 8
+  },
+  "08111": {
+    "name": "Stadt Stuttgart",
+    "sorting": "Stuttgart",
+    "bundeslandId": 8
+  },
+  "08416": {
+    "name": "Landkreis Tübingen",
+    "sorting": "Tübingen",
+    "bundeslandId": 8
+  },
+  "08327": {
+    "name": "Landkreis Tuttlingen",
+    "sorting": "Tuttlingen",
+    "bundeslandId": 8
+  },
+  "08421": {
+    "name": "Stadt Ulm",
+    "sorting": "Ulm",
+    "bundeslandId": 8
+  },
+  "08337": {
+    "name": "Landkreis Waldshut",
+    "sorting": "Waldshut",
+    "bundeslandId": 8
+  },
+  "08417": {
+    "name": "Zollernalbkreis",
+    "sorting": "Zollernalbkreis",
     "bundeslandId": 8
   }
 }
