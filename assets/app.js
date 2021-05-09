@@ -464,7 +464,7 @@
   document.addEventListener("DOMContentLoaded", function(event) {
     moment.locale("de-DE");
 
-    axios.get("data/landkreise.json").then(response => {
+    axios.get("assets/landkreise.json").then(response => {
       if (response.data) {
         landkreise = {};
         for (const [key, value] of Object.entries(response.data)) {
