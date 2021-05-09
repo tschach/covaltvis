@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0"
+      crossorigin="anonymous"
+    />
+    <link href="assets/style.css" rel="stylesheet" />
+    <title>Corona nach Altersgruppen - Visualisierung der 7-Tage-Inzidenzen in den Landkreisen</title>
+  </head>
+  <body>
+    <div class="container">
+      <header class="pt-5 offset-md-1 col-md-10">
+        <h1 class="display-3 text-muted">Corona nach Altersgruppen</h1>
+        <p class="lead text-muted">Visualisierung der 7-Tage-Inzidenzen von COVID-19-Erkrankungen nach Altersgruppen und Landkreisen<sup>*</sup></p>
+        <p class="text-muted text-end">
+          * aktuell nur für Baden-Württemberg und mit händischer Aktualisierung
+        </p>
+        <dl class="row text-muted">
+          <dt class="col-md-2">Datenquellen</dt>
+          <dd class="col-md-10">
+            <p class="m-0">
+              COVID-19-Fälle: Robert-Koch-Institut (<a href="https://npgeo-corona-npgeo-de.hub.arcgis.com/">COVID-19 Datenhub</a>)<br />Bevölkerungszahlen:
+              Statistisches Bundesamt (Destatis) (<a href="https://www-genesis.destatis.de/genesis/online">Genesis online</a>) (für die RKI-Altersgruppen via
+              <a href="https://github.com/semohr/risikogebiete_deutschland">Risikogebiete Deutschland</a>)
+            </p>
+          </dd>
+          <dt class="col-md-2">Letzte Aktualisierung</dt>
+          <dd class="col-md-10">9. Mai 2021</dd>
+          <dt class="col-md-2">Autor</dt>
+          <dd class="col-md-10">Tobias Schächtelin (<a href="https://twitter.com/tschach">@tschach</a>)</dd>
+          <dt class="col-md-2">Nutzungsbedingungen</dt>
+          <dd class="col-md-10">
+            Die angezeigten Diagramme sind gemeinfrei und dürfen ohne Zustimmung oder Namensnennung zu privaten oder kommerziellen Zwecken kopiert, verändert
+            und verbreitet werden (<a href="https://creativecommons.org/publicdomain/zero/1.0/deed.de">CC-0</a>)
+          </dd>
+        </dl>
+      </header>
+      <hr />
+      <section class="pb-3 offset-md-1 col-md-10">
+        <h2 class="text-muted">1. Kreis oder Stadt wählen</h2>
+        <div>
+          <select id="landkreisSelect" class="form-select">
+            <option value=""></option>
+          </select>
+        </div>
+      </section>
+      <hr />
+      <section class="pb-3 offset-md-1 col-md-10">
+        <h2 class="text-muted">2. Zeitraum und Farbschema festlegen (optional)</h2>
+        <div class="row g-4">
+          <div class="col-md-10">
+            <label for="timeframe" class="form-label">Zeitraum</label>
+            <div class="btn-group d-flex w-100" role="group">
+              <input type="radio" class="btn-check w-100" name="timeframe" id="btnradio1" autocomplete="off" value="all" checked />
+              <label class="btn btn-sm btn-outline-secondary" for="btnradio1">Ganze Pandemie</label>
+
+              <input type="radio" class="btn-check w-100" name="timeframe" id="btnradio2" autocomplete="off" value="oct2020" />
+              <label class="btn btn-sm btn-outline-secondary" for="btnradio2">seit Oktober 2020</label>
+
+              <input type="radio" class="btn-check w-100" name="timeframe" id="btnradio3" autocomplete="off" value="jan2021" />
+              <label class="btn btn-sm btn-outline-secondary" for="btnradio3">seit Januar 2021</label>
+
+              <input type="radio" class="btn-check w-100" name="timeframe" id="btnradio4" autocomplete="off" value="last28d" />
+              <label class="btn btn-sm btn-outline-secondary" for="btnradio4">letzte 4 Wochen</label>
+
+              <input type="radio" class="btn-check w-100" name="timeframe" id="btnradio5" autocomplete="off" value="last14d" />
+              <label class="btn btn-sm btn-outline-secondary" for="btnradio5">letzte 2 Wochen</label>
+            </div>
+          </div>
+          <div class="col-md-2">
+            <label for="colorSchemeSelect" class="form-label">Farbschema</label>
+            <select id="colorSchemeSelect" class="form-select form-select-sm">
+              <option value="DEFAULT">Standard</option>
+              <option value="RKIHEATMAP">RKI-Heatmap</option>
+            </select>
+          </div>
+        </div>
+      </section>
+      <hr />
+      <section class="pb-3" id="resultsContainer">
+        <div class="offset-md-1 col-md-10 d-flex w-100">
+          <h2 class="text-muted">3. Ergebnisse</h2>
+          <div style="align-self: center; margin-left: 4rem;">
+            <button id="updateChartsButton" type="button" class="btn btn-sm btn-primary">
+              Ergebnisse anzeigen oder aktualisieren
+            </button>
+          </div>
+        </div>
+        <div id="canvasContainer" class="bg-white"></div>
+        <div id="legendContainer" class="mt-3 offset-md-1 col-md-10 text-muted"></div>
+      </section>
+      <hr />
+      <section class="pb-5 offset-md-1 col-md-10">
+        <p class="text-muted">
+          Projekt inspiriert und aufbauend auf die Arbeiten von <a href="https://semohr.github.io/risikogebiete_deutschland/">Sebastian Mohr</a>,
+          <a href="https://rsalzer.github.io/COVID_19_AGE/">Robert Salzer</a>, <a href="https://api.corona-zahlen.org">Marlon Lückert</a>,
+          <a href="https://www.designtagebuch.de/datenvisualisierung-deutschland-in-der-dritten-welle/">Achim Schaffrinna</a> uvm.
+        </p>
+      </section>
+    </div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/chart.js@3.2.1/dist/chart.min.js"
+      integrity="sha256-uVEHWRIr846/vAdLJeybWxjPNStREzOlqLMXjW/Saeo="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/moment@2.29.1/min/moment-with-locales.min.js"
+      integrity="sha256-E3Snwx6F4t7DiA/L3DgPk6In2M1747JSau+3PWjtS5I="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/chartjs-adapter-moment@1.0.0/dist/chartjs-adapter-moment.min.js"
+      integrity="sha256-sFB24K2xU2EOgWAtb3ySAGjhMqcUvUJGmwjDcTQa04k="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/chartjs-chart-matrix@1.0.0/dist/chartjs-chart-matrix.min.js"
+      integrity="sha256-w43uLVw/A/TkKTDQhKagsrexz+DmO/ziqAOor+PhW+Y="
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="assets/app.js"></script>
+  </body>
+</html>
