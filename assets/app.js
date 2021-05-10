@@ -1,4 +1,6 @@
 (function() {
+  let devMode = true;
+
   let landkreise = {};
 
   const textLabels = {
@@ -11,7 +13,7 @@
 
   const ageGroups = ["total", "A00-A04", "A05-A14", "A15-A34", "A35-A59", "A60-A79", "A80+"];
 
-  const ageGroupsLabels = ["Gesamtbevölkerung", "bis 4 Jahre", "5 bis 14 Jahre", "15 bis 34 Jahre ", "35 bis 59 Jahre", "60 bis 79 Jahre", "über 80 Jahre"];
+  const ageGroupsLabels = ["Alle", "0–4", "5—14", "15—34", "35—59", "60—79", "80+"];
 
   const colorSchemes = {
     DEFAULT: {
@@ -252,13 +254,14 @@
           color: "#666"
         },
         tooltip: {
+          displayColors: false,
           callbacks: {
             title() {
               return "";
             },
             label(ctx) {
               const v = ctx.dataset.data[ctx.dataIndex];
-              return [`Inzidenzwert in`, `der Altersgruppe ${v.y}`, `am ${v.x}:`, `${v.v}`];
+              return [`${formatDate(v.x)}: ${v.v.toString().replace(".", ",")}`];
             }
           }
         },
@@ -330,27 +333,38 @@
     //updateCharts();
   }
 
-  function updateLegend() {
+  function updateLegend(landkreisId) {
     document.getElementById("legendContainer").replaceChildren();
 
-    const heading = document.createElement("h3");
-    heading.setAttribute("class", "text-muted");
-    heading.innerText = "Erläuterungen";
-    document.getElementById("legendContainer").appendChild(heading);
+    let element = document.createElement("h3");
+    element.setAttribute("class", "text-muted");
+    element.innerText = "Erläuterungen";
+    document.getElementById("legendContainer").appendChild(element);
+    element = document.createElement("h4");
+    element.setAttribute("class", "text-muted");
+    element.innerText = "7-Tage-Inzidenzwert der Altersgruppe (an diesem Tag gemeldete COVID-19-Fälle pro 100.000 Personen)";
+    document.getElementById("legendContainer").appendChild(element);
 
     const ul = document.createElement("ul");
-    ul.setAttribute("class", "list-inline");
+    ul.setAttribute("class", "list-inline row");
 
     colorSchemes[selectedColorScheme].ranges.forEach(range => {
       const li = document.createElement("li");
       li.setAttribute("class", "list-inline-item col-2");
-      let legendString = `${range.min} — ${isFinite(range.max) ? range.max : ""}`;
+      let legendString = `>&#8201;${range.min}&#8239;&#8211;&#8201;${isFinite(range.max) ? range.max : ""}`;
 
       li.innerHTML = `<span style="background-color:${range.color};height:16px;width:16px;margin-right:8px;display:inline-block"></span><span style="vertical-align:text-bottom">${legendString}</span>`;
       ul.appendChild(li);
     });
-
     document.getElementById("legendContainer").appendChild(ul);
+
+    const paragraph = document.createElement("p");
+    paragraph.setAttribute("class", "text-muted");
+    const link = document.createElement("a");
+    link.setAttribute("href", `https://github.com/tschach/covaltvis/blob/main/data/${landkreisId}.json`);
+    link.innerText = "Datensatz auf Github";
+    paragraph.appendChild(link);
+    document.getElementById("legendContainer").appendChild(paragraph);
   }
 
   function updateTimeframeRadioOnChange(eventObject) {
@@ -386,11 +400,14 @@
     return axios.get(path);
   }
 
-  function formatDate(date) {
+  let formatDate = function(date) {
+    if (!moment.isDate(date)) {
+      date = new Date(date);
+    }
     return `${date.getDate()}. ${date.toLocaleString("de-DE", {
       month: "long"
     })} ${date.getFullYear()}`;
-  }
+  };
 
   function formatDate2(date) {
     return date.getFullYear() + "-" + ("0" + (date.getMonth() + 1)).slice(-2) + "-" + ("0" + date.getDate()).slice(-2);
@@ -439,7 +456,7 @@
 
             var matrixChart = new Chart(ctx, matrixChartConfig);
 
-            updateLegend();
+            updateLegend(landkreisId);
           }
         })
         .catch(function(error) {
@@ -475,9 +492,11 @@
           optionElement.innerText = `${value.name}`;
           document.getElementById("landkreisSelect").appendChild(optionElement);
         }
+        if (devMode === true) {
+          selectedLandkreise = [Object.keys(landkreise)[0]];
+          updateCharts();
+        }
       }
     });
-
-    //updateCharts();
   });
 })();

@@ -17,7 +17,7 @@ body {
 }
 
 .list-inline-item:not(:last-child) {
-  margin-right: 2rem;
+  margin-right: 0;
 }
 
 a,
