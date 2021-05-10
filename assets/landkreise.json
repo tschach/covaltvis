@@ -1,68 +1,878 @@
 {
+  "10041": {
+    "name": "Regionalverband Saarbrücken",
+    "sorting": "Saarbruecken",
+    "bundeslandId": 10
+  },
+  "10042": {
+    "name": "Landkreis Merzig-Wadern",
+    "sorting": "Merzig-Wadern",
+    "bundeslandId": 10
+  },
+  "10043": {
+    "name": "Landkreis Neunkirchen",
+    "sorting": "Neunkirchen",
+    "bundeslandId": 10
+  },
+  "10044": {
+    "name": "Landkreis Saarlouis",
+    "sorting": "Saarlouis",
+    "bundeslandId": 10
+  },
+  "10045": {
+    "name": "Saarpfalz-Kreis",
+    "sorting": "Saarpfalz-Kreis",
+    "bundeslandId": 10
+  },
+  "10046": {
+    "name": "Landkreis St. Wendel",
+    "sorting": "St. Wendel",
+    "bundeslandId": 10
+  },
+  "12051": {
+    "name": "Stadt Brandenburg an der Havel",
+    "sorting": "Brandenburg an der Havel, Stadt",
+    "bundeslandId": 12
+  },
+  "12052": {
+    "name": "Stadt Cottbus",
+    "sorting": "Cottbus, Stadt",
+    "bundeslandId": 12
+  },
+  "12053": {
+    "name": "Stadt Frankfurt (Oder)",
+    "sorting": "Frankfurt (Oder), Stadt",
+    "bundeslandId": 12
+  },
+  "12054": {
+    "name": "Stadt Potsdam",
+    "sorting": "Potsdam, Stadt",
+    "bundeslandId": 12
+  },
+  "12060": {
+    "name": "Landkreis Barnim",
+    "sorting": "Barnim",
+    "bundeslandId": 12
+  },
+  "12061": {
+    "name": "Landkreis Dahme-Spreewald",
+    "sorting": "Dahme-Spreewald",
+    "bundeslandId": 12
+  },
+  "12062": {
+    "name": "Landkreis Elbe-Elster",
+    "sorting": "Elbe-Elster",
+    "bundeslandId": 12
+  },
+  "12063": {
+    "name": "Landkreis Havelland",
+    "sorting": "Havelland",
+    "bundeslandId": 12
+  },
+  "12064": {
+    "name": "Landkreis Märkisch-Oderland",
+    "sorting": "Märkisch-Oderland",
+    "bundeslandId": 12
+  },
+  "12065": {
+    "name": "Landkreis Oberhavel",
+    "sorting": "Oberhavel",
+    "bundeslandId": 12
+  },
+  "12066": {
+    "name": "Landkreis Oberspreewald-Lausitz",
+    "sorting": "Oberspreewald-Lausitz",
+    "bundeslandId": 12
+  },
+  "12067": {
+    "name": "Landkreis Oder-Spree",
+    "sorting": "Oder-Spree",
+    "bundeslandId": 12
+  },
+  "12068": {
+    "name": "Landkreis Ostprignitz-Ruppin",
+    "sorting": "Ostprignitz-Ruppin",
+    "bundeslandId": 12
+  },
+  "12069": {
+    "name": "Landkreis Potsdam-Mittelmark",
+    "sorting": "Potsdam-Mittelmark",
+    "bundeslandId": 12
+  },
+  "12070": {
+    "name": "Landkreis Prignitz",
+    "sorting": "Prignitz",
+    "bundeslandId": 12
+  },
+  "12071": {
+    "name": "Landkreis Spree-Neiße",
+    "sorting": "Spree-Neiße",
+    "bundeslandId": 12
+  },
+  "12072": {
+    "name": "Landkreis Teltow-Fläming",
+    "sorting": "Teltow-Fläming",
+    "bundeslandId": 12
+  },
+  "12073": {
+    "name": "Landkreis Uckermark",
+    "sorting": "Uckermark",
+    "bundeslandId": 12
+  },
+  "13003": {
+    "name": "Stadt Rostock",
+    "sorting": "Rostock",
+    "bundeslandId": 13
+  },
+  "13004": {
+    "name": "Stadt Schwerin",
+    "sorting": "Schwerin",
+    "bundeslandId": 13
+  },
+  "13071": {
+    "name": "Landkreis Mecklenburgische Seenplatte",
+    "sorting": "Mecklenburgische Seenplatte",
+    "bundeslandId": 13
+  },
+  "13072": {
+    "name": "Landkreis Rostock",
+    "sorting": "Landkreis Rostock",
+    "bundeslandId": 13
+  },
+  "13073": {
+    "name": "Landkreis Vorpommern-Rügen",
+    "sorting": "Vorpommern-Rügen",
+    "bundeslandId": 13
+  },
+  "13074": {
+    "name": "Landkreis Nordwestmecklenburg",
+    "sorting": "Nordwestmecklenburg",
+    "bundeslandId": 13
+  },
+  "13075": {
+    "name": "Landkreis Vorpommern-Greifswald",
+    "sorting": "Vorpommern-Greifswald",
+    "bundeslandId": 13
+  },
+  "13076": {
+    "name": "Landkreis Ludwigslust-Parchim",
+    "sorting": "Ludwigslust-Parchim",
+    "bundeslandId": 13
+  },
+  "14511": {
+    "name": "Stadt Chemnitz",
+    "sorting": "Chemnitz, Stadt",
+    "bundeslandId": 14
+  },
+  "14521": {
+    "name": "Erzgebirgskreis",
+    "sorting": "Erzgebirgskreis",
+    "bundeslandId": 14
+  },
+  "14522": {
+    "name": "Landkreis Mittelsachsen",
+    "sorting": "Mittelsachsen",
+    "bundeslandId": 14
+  },
+  "14523": {
+    "name": "Vogtlandkreis",
+    "sorting": "Vogtlandkreis",
+    "bundeslandId": 14
+  },
+  "14524": {
+    "name": "Landkreis Zwickau",
+    "sorting": "Zwickau",
+    "bundeslandId": 14
+  },
+  "14612": {
+    "name": "Stadt Dresden",
+    "sorting": "Dresden, Stadt",
+    "bundeslandId": 14
+  },
+  "14625": {
+    "name": "Landkreis Bautzen",
+    "sorting": "Bautzen",
+    "bundeslandId": 14
+  },
+  "14626": {
+    "name": "Landkreis Görlitz",
+    "sorting": "Görlitz",
+    "bundeslandId": 14
+  },
+  "14627": {
+    "name": "Landkreis Meißen",
+    "sorting": "Meißen",
+    "bundeslandId": 14
+  },
+  "14628": {
+    "name": "Landkreis Sächsische Schweiz-Osterzgebirge",
+    "sorting": "Sächsische Schweiz-Osterzgebirge",
+    "bundeslandId": 14
+  },
+  "14713": {
+    "name": "Stadt Leipzig",
+    "sorting": "Leipzig, Stadt",
+    "bundeslandId": 14
+  },
+  "14729": {
+    "name": "Landkreis Leipzig",
+    "sorting": "Leipzig",
+    "bundeslandId": 14
+  },
+  "14730": {
+    "name": "Landkreis Nordsachsen",
+    "sorting": "Nordsachsen",
+    "bundeslandId": 14
+  },
+  "15001": {
+    "name": "Stadt Dessau-Roßlau",
+    "sorting": "Dessau-Roßlau, Stadt",
+    "bundeslandId": 15
+  },
+  "15002": {
+    "name": "Stadt Halle (Saale)",
+    "sorting": "Halle (Saale), Stadt",
+    "bundeslandId": 15
+  },
+  "15003": {
+    "name": "Stadt Magdeburg",
+    "sorting": "Magdeburg, Landeshauptstadt",
+    "bundeslandId": 15
+  },
+  "15081": {
+    "name": "Altmarkkreis Salzwedel",
+    "sorting": "Altmarkkreis Salzwedel",
+    "bundeslandId": 15
+  },
+  "15082": {
+    "name": "Landkreis Anhalt-Bitterfeld",
+    "sorting": "Anhalt-Bitterfeld",
+    "bundeslandId": 15
+  },
+  "15083": {
+    "name": "Landkreis Börde",
+    "sorting": "Börde",
+    "bundeslandId": 15
+  },
+  "15084": {
+    "name": "Burgenlandkreis",
+    "sorting": "Burgenlandkreis",
+    "bundeslandId": 15
+  },
+  "15085": {
+    "name": "Landkreis Harz",
+    "sorting": "Harz",
+    "bundeslandId": 15
+  },
+  "15086": {
+    "name": "Landkreis Jerichower Land",
+    "sorting": "Jerichower Land",
+    "bundeslandId": 15
+  },
+  "15087": {
+    "name": "Landkreis Mansfeld-Südharz",
+    "sorting": "Mansfeld-Südharz",
+    "bundeslandId": 15
+  },
+  "15088": {
+    "name": "Saalekreis",
+    "sorting": "Saalekreis",
+    "bundeslandId": 15
+  },
+  "15089": {
+    "name": "Salzlandkreis",
+    "sorting": "Salzlandkreis",
+    "bundeslandId": 15
+  },
+  "15090": {
+    "name": "Landkreis Stendal",
+    "sorting": "Stendal",
+    "bundeslandId": 15
+  },
+  "15091": {
+    "name": "Landkreis Wittenberg",
+    "sorting": "Wittenberg",
+    "bundeslandId": 15
+  },
+  "16051": {
+    "name": "Stadt Erfurt",
+    "sorting": "Erfurt, Stadt",
+    "bundeslandId": 16
+  },
+  "16052": {
+    "name": "Stadt Gera",
+    "sorting": "Gera, Stadt",
+    "bundeslandId": 16
+  },
+  "16053": {
+    "name": "Stadt Jena",
+    "sorting": "Jena, Stadt",
+    "bundeslandId": 16
+  },
+  "16054": {
+    "name": "Stadt Suhl",
+    "sorting": "Suhl, Stadt",
+    "bundeslandId": 16
+  },
+  "16055": {
+    "name": "Stadt Weimar",
+    "sorting": "Weimar, Stadt",
+    "bundeslandId": 16
+  },
+  "16056": {
+    "name": "Stadt Eisenach",
+    "sorting": "Eisenach, Stadt",
+    "bundeslandId": 16
+  },
+  "16061": {
+    "name": "Landkreis Eichsfeld",
+    "sorting": "Eichsfeld",
+    "bundeslandId": 16
+  },
+  "16062": {
+    "name": "Landkreis Nordhausen",
+    "sorting": "Nordhausen",
+    "bundeslandId": 16
+  },
+  "16063": {
+    "name": "Wartburgkreis",
+    "sorting": "Wartburgkreis",
+    "bundeslandId": 16
+  },
+  "16064": {
+    "name": "Unstrut-Hainich-Kreis",
+    "sorting": "Unstrut-Hainich-Kreis",
+    "bundeslandId": 16
+  },
+  "16065": {
+    "name": "Kyffhäuserkreis",
+    "sorting": "Kyffhäuserkreis",
+    "bundeslandId": 16
+  },
+  "16066": {
+    "name": "Landkreis Schmalkalden-Meiningen",
+    "sorting": "Schmalkalden-Meiningen",
+    "bundeslandId": 16
+  },
+  "16067": {
+    "name": "Landkreis Gotha",
+    "sorting": "Gotha",
+    "bundeslandId": 16
+  },
+  "16068": {
+    "name": "Landkreis Sömmerda",
+    "sorting": "Sömmerda",
+    "bundeslandId": 16
+  },
+  "16069": {
+    "name": "Landkreis Hildburghausen",
+    "sorting": "Hildburghausen",
+    "bundeslandId": 16
+  },
+  "16070": {
+    "name": "Ilm-Kreis",
+    "sorting": "Ilm-Kreis",
+    "bundeslandId": 16
+  },
+  "16071": {
+    "name": "Landkreis Weimarer Land",
+    "sorting": "Weimarer Land",
+    "bundeslandId": 16
+  },
+  "16072": {
+    "name": "Landkreis Sonneberg",
+    "sorting": "Sonneberg",
+    "bundeslandId": 16
+  },
+  "16073": {
+    "name": "Landkreis Saalfeld-Rudolstadt",
+    "sorting": "Saalfeld-Rudolstadt",
+    "bundeslandId": 16
+  },
+  "16074": {
+    "name": "Saale-Holzland-Kreis",
+    "sorting": "Saale-Holzland-Kreis",
+    "bundeslandId": 16
+  },
+  "16075": {
+    "name": "Saale-Orla-Kreis",
+    "sorting": "Saale-Orla-Kreis",
+    "bundeslandId": 16
+  },
+  "16076": {
+    "name": "Landkreis Greiz",
+    "sorting": "Greiz",
+    "bundeslandId": 16
+  },
+  "16077": {
+    "name": "Landkreis Altenburger Land",
+    "sorting": "Altenburger Land",
+    "bundeslandId": 16
+  },
+  "09771": {
+    "name": "Landkreis Aichach-Friedberg",
+    "sorting": "Aichach-Friedberg",
+    "bundeslandId": 9
+  },
   "08425": {
     "name": "Alb-Donau-Kreis",
     "sorting": "Alb-Donau-Kreis",
     "bundeslandId": 8
+  },
+  "09171": {
+    "name": "Landkreis Altötting",
+    "sorting": "Altötting",
+    "bundeslandId": 9
+  },
+  "09361": {
+    "name": "Stadt Amberg",
+    "sorting": "Amberg",
+    "bundeslandId": 9
+  },
+  "09371": {
+    "name": "Landkreis Amberg-Sulzbach",
+    "sorting": "Amberg-Sulzbach",
+    "bundeslandId": 9
+  },
+  "03451": {
+    "name": "Landkreis Ammerland",
+    "sorting": "Ammerland",
+    "bundeslandId": 3
+  },
+  "09561": {
+    "name": "Stadt Ansbach",
+    "sorting": "Ansbach",
+    "bundeslandId": 9
+  },
+  "09571": {
+    "name": "Landkreis Ansbach",
+    "sorting": "Ansbach",
+    "bundeslandId": 9
+  },
+  "09661": {
+    "name": "Stadt Aschaffenburg",
+    "sorting": "Aschaffenburg",
+    "bundeslandId": 9
+  },
+  "09671": {
+    "name": "Landkreis Aschaffenburg",
+    "sorting": "Aschaffenburg",
+    "bundeslandId": 9
+  },
+  "09761": {
+    "name": "Stadt Augsburg",
+    "sorting": "Augsburg",
+    "bundeslandId": 9
+  },
+  "09772": {
+    "name": "Landkreis Augsburg",
+    "sorting": "Augsburg",
+    "bundeslandId": 9
+  },
+  "03452": {
+    "name": "Landkreis Aurich",
+    "sorting": "Aurich",
+    "bundeslandId": 3
+  },
+  "09672": {
+    "name": "Landkreis Bad Kissingen",
+    "sorting": "Bad Kissingen",
+    "bundeslandId": 9
+  },
+  "09173": {
+    "name": "Landkreis Bad Tölz-Wolfratshausen",
+    "sorting": "Bad Tölz-Wolfratshausen",
+    "bundeslandId": 9
   },
   "08211": {
     "name": "Stadt Baden-Baden",
     "sorting": "Baden-Baden",
     "bundeslandId": 8
   },
+  "09461": {
+    "name": "Stadt Bamberg",
+    "sorting": "Bamberg",
+    "bundeslandId": 9
+  },
+  "09471": {
+    "name": "Landkreis Bamberg",
+    "sorting": "Bamberg",
+    "bundeslandId": 9
+  },
+  "09462": {
+    "name": "Stadt Bayreuth",
+    "sorting": "Bayreuth",
+    "bundeslandId": 9
+  },
+  "09472": {
+    "name": "Landkreis Bayreuth",
+    "sorting": "Bayreuth",
+    "bundeslandId": 9
+  },
+  "09172": {
+    "name": "Landkreis Berchtesgadener Land",
+    "sorting": "Berchtesgadener Land",
+    "bundeslandId": 9
+  },
   "08426": {
     "name": "Landkreis Biberach",
     "sorting": "Biberach",
     "bundeslandId": 8
+  },
+  "05711": {
+    "name": "Stadt Bielefeld",
+    "sorting": "Bielefeld, Stadt",
+    "bundeslandId": 5
   },
   "08115": {
     "name": "Landkreis Böblingen",
     "sorting": "Böblingen",
     "bundeslandId": 8
   },
+  "05911": {
+    "name": "Stadt Bochum",
+    "sorting": "Bochum, Stadt",
+    "bundeslandId": 5
+  },
   "08435": {
     "name": "Bodenseekreis",
     "sorting": "Bodenseekreis",
     "bundeslandId": 8
+  },
+  "05314": {
+    "name": "Stadt Bonn",
+    "sorting": "Bonn, Stadt",
+    "bundeslandId": 5
+  },
+  "05554": {
+    "name": "Landkreis Borken",
+    "sorting": "Borken",
+    "bundeslandId": 5
+  },
+  "05512": {
+    "name": "Stadt Bottrop",
+    "sorting": "Bottrop, Stadt",
+    "bundeslandId": 5
+  },
+  "03101": {
+    "name": "Stadt Braunschweig",
+    "sorting": "Braunschweig, Stadt",
+    "bundeslandId": 3
   },
   "08315": {
     "name": "Landkreis Breisgau-Hochschwarzwald",
     "sorting": "Breisgau-Hochschwarzwald",
     "bundeslandId": 8
   },
+  "04011": {
+    "name": "Stadt Bremen",
+    "sorting": "Bremen, Stadt",
+    "bundeslandId": 4
+  },
+  "04012": {
+    "name": "Stadt Bremerhaven",
+    "sorting": "Bremerhaven, Stadt",
+    "bundeslandId": 4
+  },
   "08235": {
     "name": "Landkreis Calw",
     "sorting": "Calw",
     "bundeslandId": 8
+  },
+  "03351": {
+    "name": "Landkreis Celle",
+    "sorting": "Celle",
+    "bundeslandId": 3
+  },
+  "09372": {
+    "name": "Landkreis Cham",
+    "sorting": "Cham",
+    "bundeslandId": 9
+  },
+  "03453": {
+    "name": "Landkreis Cloppenburg",
+    "sorting": "Cloppenburg",
+    "bundeslandId": 3
+  },
+  "09463": {
+    "name": "Stadt Coburg",
+    "sorting": "Coburg",
+    "bundeslandId": 9
+  },
+  "09473": {
+    "name": "Landkreis Coburg",
+    "sorting": "Coburg",
+    "bundeslandId": 9
+  },
+  "05558": {
+    "name": "Landkreis Coesfeld",
+    "sorting": "Coesfeld",
+    "bundeslandId": 5
+  },
+  "03352": {
+    "name": "Landkreis Cuxhaven",
+    "sorting": "Cuxhaven",
+    "bundeslandId": 3
+  },
+  "09174": {
+    "name": "Landkreis Dachau",
+    "sorting": "Dachau",
+    "bundeslandId": 9
+  },
+  "09271": {
+    "name": "Landkreis Deggendorf",
+    "sorting": "Deggendorf",
+    "bundeslandId": 9
+  },
+  "03401": {
+    "name": "Stadt Delmenhorst",
+    "sorting": "Delmenhorst, Stadt",
+    "bundeslandId": 3
+  },
+  "03251": {
+    "name": "Landkreis Diepholz",
+    "sorting": "Diepholz",
+    "bundeslandId": 3
+  },
+  "09773": {
+    "name": "Landkreis Dillingen a.d.Donau",
+    "sorting": "Dillingen a.d.Donau",
+    "bundeslandId": 9
+  },
+  "09279": {
+    "name": "Landkreis Dingolfing-Landau",
+    "sorting": "Dingolfing-Landau",
+    "bundeslandId": 9
+  },
+  "01051": {
+    "name": "Landkreis Dithmarschen",
+    "sorting": "Dithmarschen",
+    "bundeslandId": 1
+  },
+  "09779": {
+    "name": "Landkreis Donau-Ries",
+    "sorting": "Donau-Ries",
+    "bundeslandId": 9
+  },
+  "05913": {
+    "name": "Stadt Dortmund",
+    "sorting": "Dortmund, Stadt",
+    "bundeslandId": 5
+  },
+  "05112": {
+    "name": "Stadt Duisburg",
+    "sorting": "Duisburg, Stadt",
+    "bundeslandId": 5
+  },
+  "05358": {
+    "name": "Landkreis Düren",
+    "sorting": "Düren",
+    "bundeslandId": 5
+  },
+  "05111": {
+    "name": "Stadt Düsseldorf",
+    "sorting": "Düsseldorf, Stadt",
+    "bundeslandId": 5
+  },
+  "09175": {
+    "name": "Landkreis Ebersberg",
+    "sorting": "Ebersberg",
+    "bundeslandId": 9
+  },
+  "09176": {
+    "name": "Landkreis Eichstätt",
+    "sorting": "Eichstätt",
+    "bundeslandId": 9
+  },
+  "03402": {
+    "name": "Stadt Emden",
+    "sorting": "Emden, Stadt",
+    "bundeslandId": 3
   },
   "08316": {
     "name": "Landkreis Emmendingen",
     "sorting": "Emmendingen",
     "bundeslandId": 8
   },
+  "03454": {
+    "name": "Landkreis Emsland",
+    "sorting": "Emsland",
+    "bundeslandId": 3
+  },
+  "05954": {
+    "name": "Ennepe-Ruhr-Kreis",
+    "sorting": "Ennepe-Ruhr-Kreis",
+    "bundeslandId": 5
+  },
   "08236": {
     "name": "Enzkreis",
     "sorting": "Enzkreis",
     "bundeslandId": 8
+  },
+  "09177": {
+    "name": "Landkreis Erding",
+    "sorting": "Erding",
+    "bundeslandId": 9
+  },
+  "09562": {
+    "name": "Stadt Erlangen",
+    "sorting": "Erlangen",
+    "bundeslandId": 9
+  },
+  "09572": {
+    "name": "Landkreis Erlangen-Höchstadt",
+    "sorting": "Erlangen-Höchstadt",
+    "bundeslandId": 9
+  },
+  "05113": {
+    "name": "Stadt Essen",
+    "sorting": "Essen, Stadt",
+    "bundeslandId": 5
   },
   "08116": {
     "name": "Landkreis Esslingen",
     "sorting": "Esslingen",
     "bundeslandId": 8
   },
+  "05366": {
+    "name": "Landkreis Euskirchen",
+    "sorting": "Euskirchen",
+    "bundeslandId": 5
+  },
+  "01001": {
+    "name": "Stadt Flensburg",
+    "sorting": "Flensburg, Stadt",
+    "bundeslandId": 1
+  },
+  "09474": {
+    "name": "Landkreis Forchheim",
+    "sorting": "Forchheim",
+    "bundeslandId": 9
+  },
   "08311": {
     "name": "Stadt Freiburg im Breisgau",
     "sorting": "Freiburg im Breisgau",
     "bundeslandId": 8
+  },
+  "09178": {
+    "name": "Landkreis Freising",
+    "sorting": "Freising",
+    "bundeslandId": 9
   },
   "08237": {
     "name": "Landkreis Freudenstadt",
     "sorting": "Freudenstadt",
     "bundeslandId": 8
   },
+  "09272": {
+    "name": "Landkreis Freyung-Grafenau",
+    "sorting": "Freyung-Grafenau",
+    "bundeslandId": 9
+  },
+  "03455": {
+    "name": "Landkreis Friesland",
+    "sorting": "Friesland",
+    "bundeslandId": 3
+  },
+  "09179": {
+    "name": "Landkreis Fürstenfeldbruck",
+    "sorting": "Fürstenfeldbruck",
+    "bundeslandId": 9
+  },
+  "09563": {
+    "name": "Stadt Fürth",
+    "sorting": "Fürth",
+    "bundeslandId": 9
+  },
+  "09573": {
+    "name": "Landkreis Fürth",
+    "sorting": "Fürth",
+    "bundeslandId": 9
+  },
+  "09180": {
+    "name": "Landkreis Garmisch-Partenkirchen",
+    "sorting": "Garmisch-Partenkirchen",
+    "bundeslandId": 9
+  },
+  "05513": {
+    "name": "Stadt Gelsenkirchen",
+    "sorting": "Gelsenkirchen, Stadt",
+    "bundeslandId": 5
+  },
+  "03151": {
+    "name": "Landkreis Gifhorn",
+    "sorting": "Gifhorn",
+    "bundeslandId": 3
+  },
   "08117": {
     "name": "Landkreis Göppingen",
     "sorting": "Göppingen",
     "bundeslandId": 8
+  },
+  "03153": {
+    "name": "Landkreis Goslar",
+    "sorting": "Goslar",
+    "bundeslandId": 3
+  },
+  "03159": {
+    "name": "Landkreis Göttingen",
+    "sorting": "Göttingen",
+    "bundeslandId": 3
+  },
+  "03456": {
+    "name": "Grafschaft Bentheim",
+    "sorting": "Grafschaft Bentheim",
+    "bundeslandId": 3
+  },
+  "09774": {
+    "name": "Landkreis Günzburg",
+    "sorting": "Günzburg",
+    "bundeslandId": 9
+  },
+  "05754": {
+    "name": "Landkreis Gütersloh",
+    "sorting": "Gütersloh",
+    "bundeslandId": 5
+  },
+  "05914": {
+    "name": "Stadt Hagen",
+    "sorting": "Hagen, Stadt der FernUniversität",
+    "bundeslandId": 5
+  },
+  "02000": {
+    "name": "Stadt Hamburg",
+    "sorting": "Hamburg, Freie und Hansestadt",
+    "bundeslandId": 2
+  },
+  "03252": {
+    "name": "Landkreis Hameln-Pyrmont",
+    "sorting": "Hameln-Pyrmont",
+    "bundeslandId": 3
+  },
+  "05915": {
+    "name": "Stadt Hamm",
+    "sorting": "Hamm, Stadt",
+    "bundeslandId": 5
+  },
+  "03241": {
+    "name": "Region Hannover",
+    "sorting": "Hannover",
+    "bundeslandId": 3
+  },
+  "03353": {
+    "name": "Landkreis Harburg",
+    "sorting": "Harburg",
+    "bundeslandId": 3
+  },
+  "09674": {
+    "name": "Landkreis Haßberge",
+    "sorting": "Haßberge",
+    "bundeslandId": 9
+  },
+  "03358": {
+    "name": "Heidekreis",
+    "sorting": "Heidekreis",
+    "bundeslandId": 3
   },
   "08221": {
     "name": "Stadt Heidelberg",
@@ -84,10 +894,65 @@
     "sorting": "Heilbronn SK",
     "bundeslandId": 8
   },
+  "05370": {
+    "name": "Landkreis Heinsberg",
+    "sorting": "Heinsberg",
+    "bundeslandId": 5
+  },
+  "03154": {
+    "name": "Landkreis Helmstedt",
+    "sorting": "Helmstedt",
+    "bundeslandId": 3
+  },
+  "05758": {
+    "name": "Landkreis Herford",
+    "sorting": "Herford",
+    "bundeslandId": 5
+  },
+  "05916": {
+    "name": "Stadt Herne",
+    "sorting": "Herne, Stadt",
+    "bundeslandId": 5
+  },
+  "03254": {
+    "name": "Landkreis Hildesheim",
+    "sorting": "Hildesheim",
+    "bundeslandId": 3
+  },
+  "05958": {
+    "name": "Hochsauerlandkreis",
+    "sorting": "Hochsauerlandkreis",
+    "bundeslandId": 5
+  },
+  "09464": {
+    "name": "Stadt Hof",
+    "sorting": "Hof",
+    "bundeslandId": 9
+  },
+  "09475": {
+    "name": "Landkreis Hof",
+    "sorting": "Hof",
+    "bundeslandId": 9
+  },
   "08126": {
     "name": "Hohenlohekreis",
     "sorting": "Hohenlohekreis",
     "bundeslandId": 8
+  },
+  "03255": {
+    "name": "Landkreis Holzminden",
+    "sorting": "Holzminden",
+    "bundeslandId": 3
+  },
+  "05762": {
+    "name": "Landkreis Höxter",
+    "sorting": "Höxter",
+    "bundeslandId": 5
+  },
+  "09161": {
+    "name": "Stadt Ingolstadt",
+    "sorting": "Ingolstadt",
+    "bundeslandId": 9
   },
   "08215": {
     "name": "Landkreis Karlsruhe",
@@ -99,20 +964,135 @@
     "sorting": "Karlsruhe,",
     "bundeslandId": 8
   },
+  "09762": {
+    "name": "Stadt Kaufbeuren",
+    "sorting": "Kaufbeuren",
+    "bundeslandId": 9
+  },
+  "09273": {
+    "name": "Landkreis Kelheim",
+    "sorting": "Kelheim",
+    "bundeslandId": 9
+  },
+  "09763": {
+    "name": "Stadt Kempten (Allgäu)",
+    "sorting": "Kempten (Allgäu)",
+    "bundeslandId": 9
+  },
+  "01002": {
+    "name": "Stadt Kiel",
+    "sorting": "Kiel, Landeshauptstadt",
+    "bundeslandId": 1
+  },
+  "09675": {
+    "name": "Landkreis Kitzingen",
+    "sorting": "Kitzingen",
+    "bundeslandId": 9
+  },
+  "05154": {
+    "name": "Landkreis Kleve",
+    "sorting": "Kleve",
+    "bundeslandId": 5
+  },
+  "05315": {
+    "name": "Stadt Köln",
+    "sorting": "Köln, Stadt",
+    "bundeslandId": 5
+  },
   "08335": {
     "name": "Landkreis Konstanz",
     "sorting": "Konstanz",
     "bundeslandId": 8
+  },
+  "05114": {
+    "name": "Stadt Krefeld",
+    "sorting": "Krefeld, Stadt",
+    "bundeslandId": 5
+  },
+  "09476": {
+    "name": "Landkreis Kronach",
+    "sorting": "Kronach",
+    "bundeslandId": 9
+  },
+  "09477": {
+    "name": "Landkreis Kulmbach",
+    "sorting": "Kulmbach",
+    "bundeslandId": 9
+  },
+  "09181": {
+    "name": "Landkreis Landsberg am Lech",
+    "sorting": "Landsberg am Lech",
+    "bundeslandId": 9
+  },
+  "09261": {
+    "name": "Stadt Landshut",
+    "sorting": "Landshut",
+    "bundeslandId": 9
+  },
+  "09274": {
+    "name": "Landkreis Landshut",
+    "sorting": "Landshut",
+    "bundeslandId": 9
+  },
+  "01053": {
+    "name": "Landkreis Herzogtum Lauenburg",
+    "sorting": "Lauenburg",
+    "bundeslandId": 1
+  },
+  "03457": {
+    "name": "Landkreis Leer",
+    "sorting": "Leer",
+    "bundeslandId": 3
+  },
+  "05316": {
+    "name": "Stadt Leverkusen",
+    "sorting": "Leverkusen, Stadt",
+    "bundeslandId": 5
+  },
+  "09478": {
+    "name": "Landkreis Lichtenfels",
+    "sorting": "Lichtenfels",
+    "bundeslandId": 9
+  },
+  "09776": {
+    "name": "Landkreis Lindau (Bodensee)",
+    "sorting": "Lindau (Bodensee)",
+    "bundeslandId": 9
+  },
+  "05766": {
+    "name": "Landkreis Lippe",
+    "sorting": "Lippe",
+    "bundeslandId": 5
   },
   "08336": {
     "name": "Landkreis Lörrach",
     "sorting": "Lörrach",
     "bundeslandId": 8
   },
+  "01003": {
+    "name": "Stadt Lübeck",
+    "sorting": "Lübeck, Hansestadt",
+    "bundeslandId": 1
+  },
+  "03354": {
+    "name": "Landkreis Lüchow-Dannenberg",
+    "sorting": "Lüchow-Dannenberg",
+    "bundeslandId": 3
+  },
   "08118": {
     "name": "Landkreis Ludwigsburg",
     "sorting": "Ludwigsburg",
     "bundeslandId": 8
+  },
+  "03355": {
+    "name": "Landkreis Lüneburg",
+    "sorting": "Lüneburg",
+    "bundeslandId": 3
+  },
+  "09677": {
+    "name": "Landkreis Main-Spessart",
+    "sorting": "Main-Spessart",
+    "bundeslandId": 9
   },
   "08128": {
     "name": "Main-Tauber-Kreis",
@@ -124,25 +1104,230 @@
     "sorting": "Mannheim",
     "bundeslandId": 8
   },
+  "05962": {
+    "name": "Märkischer Kreis",
+    "sorting": "Märkischer Kreis",
+    "bundeslandId": 5
+  },
+  "09764": {
+    "name": "Stadt Memmingen",
+    "sorting": "Memmingen",
+    "bundeslandId": 9
+  },
+  "05158": {
+    "name": "Landkreis Mettmann",
+    "sorting": "Mettmann",
+    "bundeslandId": 5
+  },
+  "09182": {
+    "name": "Landkreis Miesbach",
+    "sorting": "Miesbach",
+    "bundeslandId": 9
+  },
+  "09676": {
+    "name": "Landkreis Miltenberg",
+    "sorting": "Miltenberg",
+    "bundeslandId": 9
+  },
+  "05770": {
+    "name": "Landkreis Minden-Lübbecke",
+    "sorting": "Minden-Lübbecke",
+    "bundeslandId": 5
+  },
+  "05116": {
+    "name": "Stadt Mönchengladbach",
+    "sorting": "Mönchengladbach, Stadt",
+    "bundeslandId": 5
+  },
+  "09183": {
+    "name": "Landkreis Mühldorf a.Inn",
+    "sorting": "Mühldorf a.Inn",
+    "bundeslandId": 9
+  },
+  "05117": {
+    "name": "Stadt Mülheim an der Ruhr",
+    "sorting": "Mülheim an der Ruhr, Stadt",
+    "bundeslandId": 5
+  },
+  "09184": {
+    "name": "Landkreis München",
+    "sorting": "München",
+    "bundeslandId": 9
+  },
+  "09162": {
+    "name": "Stadt München",
+    "sorting": "München, Landeshauptstadt",
+    "bundeslandId": 9
+  },
+  "05515": {
+    "name": "Stadt Münster",
+    "sorting": "Münster, Stadt",
+    "bundeslandId": 5
+  },
   "08225": {
     "name": "Neckar-Odenwald-Kreis",
     "sorting": "Neckar-Odenwald-Kreis",
     "bundeslandId": 8
+  },
+  "09775": {
+    "name": "Landkreis Neu-Ulm",
+    "sorting": "Neu-Ulm",
+    "bundeslandId": 9
+  },
+  "09185": {
+    "name": "Landkreis Neuburg-Schrobenhausen",
+    "sorting": "Neuburg-Schrobenhausen",
+    "bundeslandId": 9
+  },
+  "09373": {
+    "name": "Landkreis Neumarkt i.d.OPf.",
+    "sorting": "Neumarkt i.d.OPf.",
+    "bundeslandId": 9
+  },
+  "01004": {
+    "name": "Stadt Neumünster",
+    "sorting": "Neumünster, Stadt",
+    "bundeslandId": 1
+  },
+  "09575": {
+    "name": "Landkreis Neustadt a.d.Aisch-Bad Windsheim",
+    "sorting": "Neustadt a.d.Aisch-Bad Windsheim",
+    "bundeslandId": 9
+  },
+  "09374": {
+    "name": "Landkreis Neustadt a.d.Waldnaab",
+    "sorting": "Neustadt a.d.Waldnaab",
+    "bundeslandId": 9
+  },
+  "03256": {
+    "name": "Landkreis Nienburg (Weser)",
+    "sorting": "Nienburg (Weser)",
+    "bundeslandId": 3
+  },
+  "01054": {
+    "name": "Landkreis Nordfriesland",
+    "sorting": "Nordfriesland",
+    "bundeslandId": 1
+  },
+  "03155": {
+    "name": "Landkreis Northeim",
+    "sorting": "Northeim",
+    "bundeslandId": 3
+  },
+  "09564": {
+    "name": "Stadt Nürnberg",
+    "sorting": "Nürnberg",
+    "bundeslandId": 9
+  },
+  "09574": {
+    "name": "Landkreis Nürnberger Land",
+    "sorting": "Nürnberger Land",
+    "bundeslandId": 9
+  },
+  "09780": {
+    "name": "Landkreis Oberallgäu",
+    "sorting": "Oberallgäu",
+    "bundeslandId": 9
+  },
+  "05374": {
+    "name": "Oberbergischer Kreis",
+    "sorting": "Oberbergischer Kreis",
+    "bundeslandId": 5
+  },
+  "05119": {
+    "name": "Stadt Oberhausen",
+    "sorting": "Oberhausen, Stadt",
+    "bundeslandId": 5
+  },
+  "03458": {
+    "name": "Landkreis Oldenburg",
+    "sorting": "Oldenburg",
+    "bundeslandId": 3
+  },
+  "03403": {
+    "name": "Stadt Oldenburg",
+    "sorting": "Oldenburg, Stadt",
+    "bundeslandId": 3
+  },
+  "05966": {
+    "name": "Landkreis Olpe",
+    "sorting": "Olpe",
+    "bundeslandId": 5
   },
   "08317": {
     "name": "Ortenaukreis",
     "sorting": "Ortenaukreis",
     "bundeslandId": 8
   },
+  "03459": {
+    "name": "Landkreis Osnabrück",
+    "sorting": "Osnabrück",
+    "bundeslandId": 3
+  },
+  "03404": {
+    "name": "Stadt Osnabrück",
+    "sorting": "Osnabrück, Stadt",
+    "bundeslandId": 3
+  },
   "08136": {
     "name": "Ostalbkreis",
     "sorting": "Ostalbkreis",
     "bundeslandId": 8
   },
+  "09777": {
+    "name": "Landkreis Ostallgäu",
+    "sorting": "Ostallgäu",
+    "bundeslandId": 9
+  },
+  "03356": {
+    "name": "Landkreis Osterholz",
+    "sorting": "Osterholz",
+    "bundeslandId": 3
+  },
+  "01055": {
+    "name": "Landkreis Ostholstein",
+    "sorting": "Ostholstein",
+    "bundeslandId": 1
+  },
+  "05774": {
+    "name": "Landkreis Paderborn",
+    "sorting": "Paderborn",
+    "bundeslandId": 5
+  },
+  "09262": {
+    "name": "Stadt Passau",
+    "sorting": "Passau",
+    "bundeslandId": 9
+  },
+  "09275": {
+    "name": "Landkreis Passau",
+    "sorting": "Passau",
+    "bundeslandId": 9
+  },
+  "03157": {
+    "name": "Landkreis Peine",
+    "sorting": "Peine",
+    "bundeslandId": 3
+  },
+  "09186": {
+    "name": "Landkreis Pfaffenhofen a.d.Ilm",
+    "sorting": "Pfaffenhofen a.d.Ilm",
+    "bundeslandId": 9
+  },
   "08231": {
     "name": "Stadt Pforzheim",
     "sorting": "Pforzheim",
     "bundeslandId": 8
+  },
+  "01056": {
+    "name": "Landkreis Pinneberg",
+    "sorting": "Pinneberg",
+    "bundeslandId": 1
+  },
+  "01057": {
+    "name": "Landkreis Plön",
+    "sorting": "Plön",
+    "bundeslandId": 1
   },
   "08216": {
     "name": "Landkreis Rastatt",
@@ -154,45 +1339,230 @@
     "sorting": "Ravensburg",
     "bundeslandId": 8
   },
+  "05562": {
+    "name": "Landkreis Recklinghausen",
+    "sorting": "Recklinghausen",
+    "bundeslandId": 5
+  },
+  "09276": {
+    "name": "Landkreis Regen",
+    "sorting": "Regen",
+    "bundeslandId": 9
+  },
+  "09362": {
+    "name": "Stadt Regensburg",
+    "sorting": "Regensburg",
+    "bundeslandId": 9
+  },
+  "09375": {
+    "name": "Landkreis Regensburg",
+    "sorting": "Regensburg",
+    "bundeslandId": 9
+  },
   "08119": {
     "name": "Rems-Murr-Kreis",
     "sorting": "Rems-Murr-Kreis",
     "bundeslandId": 8
+  },
+  "05120": {
+    "name": "Stadt Remscheid",
+    "sorting": "Remscheid, Stadt",
+    "bundeslandId": 5
+  },
+  "01058": {
+    "name": "Landkreis Rendsburg-Eckernförde",
+    "sorting": "Rendsburg-Eckernförde",
+    "bundeslandId": 1
   },
   "08415": {
     "name": "Landkreis Reutlingen",
     "sorting": "Reutlingen",
     "bundeslandId": 8
   },
+  "05362": {
+    "name": "Rhein-Erft-Kreis",
+    "sorting": "Rhein-Erft-Kreis",
+    "bundeslandId": 5
+  },
+  "05162": {
+    "name": "Rhein-Kreis Neuss",
+    "sorting": "Rhein-Kreis Neuss",
+    "bundeslandId": 5
+  },
   "08226": {
     "name": "Rhein-Neckar-Kreis",
     "sorting": "Rhein-Neckar-Kreis",
     "bundeslandId": 8
+  },
+  "05382": {
+    "name": "Rhein-Sieg-Kreis",
+    "sorting": "Rhein-Sieg-Kreis",
+    "bundeslandId": 5
+  },
+  "05378": {
+    "name": "Rheinisch-Bergischer Kreis",
+    "sorting": "Rheinisch-Bergischer Kreis",
+    "bundeslandId": 5
+  },
+  "09673": {
+    "name": "Landkreis Rhön-Grabfeld",
+    "sorting": "Rhön-Grabfeld",
+    "bundeslandId": 9
+  },
+  "09163": {
+    "name": "Stadt Rosenheim",
+    "sorting": "Rosenheim",
+    "bundeslandId": 9
+  },
+  "09187": {
+    "name": "Landkreis Rosenheim",
+    "sorting": "Rosenheim",
+    "bundeslandId": 9
+  },
+  "03357": {
+    "name": "Landkreis Rotenburg (Wümme)",
+    "sorting": "Rotenburg (Wümme)",
+    "bundeslandId": 3
+  },
+  "09576": {
+    "name": "Landkreis Roth",
+    "sorting": "Roth",
+    "bundeslandId": 9
+  },
+  "09277": {
+    "name": "Landkreis Rottal-Inn",
+    "sorting": "Rottal-Inn",
+    "bundeslandId": 9
   },
   "08325": {
     "name": "Landkreis Rottweil",
     "sorting": "Rottweil",
     "bundeslandId": 8
   },
+  "03102": {
+    "name": "Stadt Salzgitter",
+    "sorting": "Salzgitter, Stadt",
+    "bundeslandId": 3
+  },
+  "03257": {
+    "name": "Landkreis Schaumburg",
+    "sorting": "Schaumburg",
+    "bundeslandId": 3
+  },
+  "01059": {
+    "name": "Landkreis Schleswig-Flensburg",
+    "sorting": "Schleswig-Flensburg",
+    "bundeslandId": 1
+  },
+  "09565": {
+    "name": "Stadt Schwabach",
+    "sorting": "Schwabach",
+    "bundeslandId": 9
+  },
   "08127": {
     "name": "Landkreis Schwäbisch Hall",
     "sorting": "Schwäbisch Hall",
     "bundeslandId": 8
+  },
+  "09376": {
+    "name": "Landkreis Schwandorf",
+    "sorting": "Schwandorf",
+    "bundeslandId": 9
   },
   "08326": {
     "name": "Schwarzwald-Baar-Kreis",
     "sorting": "Schwarzwald-Baar-Kreis",
     "bundeslandId": 8
   },
+  "09662": {
+    "name": "Stadt Schweinfurt",
+    "sorting": "Schweinfurt",
+    "bundeslandId": 9
+  },
+  "09678": {
+    "name": "Landkreis Schweinfurt",
+    "sorting": "Schweinfurt",
+    "bundeslandId": 9
+  },
+  "01060": {
+    "name": "Landkreis Segeberg",
+    "sorting": "Segeberg",
+    "bundeslandId": 1
+  },
+  "05970": {
+    "name": "Landkreis Siegen-Wittgenstein",
+    "sorting": "Siegen-Wittgenstein",
+    "bundeslandId": 5
+  },
   "08437": {
     "name": "Landkreis Sigmaringen",
     "sorting": "Sigmaringen",
     "bundeslandId": 8
   },
+  "05974": {
+    "name": "Landkreis Soest",
+    "sorting": "Soest",
+    "bundeslandId": 5
+  },
+  "05122": {
+    "name": "Stadt Solingen",
+    "sorting": "Solingen, Klingenstadt",
+    "bundeslandId": 5
+  },
+  "03359": {
+    "name": "Landkreis Stade",
+    "sorting": "Stade",
+    "bundeslandId": 3
+  },
+  "05334": {
+    "name": "Städteregion Aachen",
+    "sorting": "Städteregion Aachen",
+    "bundeslandId": 5
+  },
+  "09188": {
+    "name": "Landkreis Starnberg",
+    "sorting": "Starnberg",
+    "bundeslandId": 9
+  },
+  "01061": {
+    "name": "Landkreis Steinburg",
+    "sorting": "Steinburg",
+    "bundeslandId": 1
+  },
+  "05566": {
+    "name": "Landkreis Steinfurt",
+    "sorting": "Steinfurt",
+    "bundeslandId": 5
+  },
+  "01062": {
+    "name": "Landkreis Stormarn",
+    "sorting": "Stormarn",
+    "bundeslandId": 1
+  },
+  "09263": {
+    "name": "Stadt Straubing",
+    "sorting": "Straubing",
+    "bundeslandId": 9
+  },
+  "09278": {
+    "name": "Landkreis Straubing-Bogen",
+    "sorting": "Straubing-Bogen",
+    "bundeslandId": 9
+  },
   "08111": {
     "name": "Stadt Stuttgart",
     "sorting": "Stuttgart",
     "bundeslandId": 8
+  },
+  "09377": {
+    "name": "Landkreis Tirschenreuth",
+    "sorting": "Tirschenreuth",
+    "bundeslandId": 9
+  },
+  "09189": {
+    "name": "Landkreis Traunstein",
+    "sorting": "Traunstein",
+    "bundeslandId": 9
   },
   "08416": {
     "name": "Landkreis Tübingen",
@@ -204,15 +1574,115 @@
     "sorting": "Tuttlingen",
     "bundeslandId": 8
   },
+  "03360": {
+    "name": "Landkreis Uelzen",
+    "sorting": "Uelzen",
+    "bundeslandId": 3
+  },
   "08421": {
     "name": "Stadt Ulm",
     "sorting": "Ulm",
     "bundeslandId": 8
   },
+  "05978": {
+    "name": "Landkreis Unna",
+    "sorting": "Unna",
+    "bundeslandId": 5
+  },
+  "09778": {
+    "name": "Landkreis Unterallgäu",
+    "sorting": "Unterallgäu",
+    "bundeslandId": 9
+  },
+  "03460": {
+    "name": "Landkreis Vechta",
+    "sorting": "Vechta",
+    "bundeslandId": 3
+  },
+  "03361": {
+    "name": "Landkreis Verden",
+    "sorting": "Verden",
+    "bundeslandId": 3
+  },
+  "05166": {
+    "name": "Landkreis Viersen",
+    "sorting": "Viersen",
+    "bundeslandId": 5
+  },
   "08337": {
     "name": "Landkreis Waldshut",
     "sorting": "Waldshut",
     "bundeslandId": 8
+  },
+  "05570": {
+    "name": "Landkreis Warendorf",
+    "sorting": "Warendorf",
+    "bundeslandId": 5
+  },
+  "09363": {
+    "name": "Stadt Weiden i.d.OPf.",
+    "sorting": "Weiden i.d.OPf.",
+    "bundeslandId": 9
+  },
+  "09190": {
+    "name": "Landkreis Weilheim-Schongau",
+    "sorting": "Weilheim-Schongau",
+    "bundeslandId": 9
+  },
+  "09577": {
+    "name": "Landkreis Weißenburg-Gunzenhausen",
+    "sorting": "Weißenburg-Gunzenhausen",
+    "bundeslandId": 9
+  },
+  "05170": {
+    "name": "Landkreis Wesel",
+    "sorting": "Wesel",
+    "bundeslandId": 5
+  },
+  "03461": {
+    "name": "Landkreis Wesermarsch",
+    "sorting": "Wesermarsch",
+    "bundeslandId": 3
+  },
+  "03405": {
+    "name": "Stadt Wilhelmshaven",
+    "sorting": "Wilhelmshaven, Stadt",
+    "bundeslandId": 3
+  },
+  "03462": {
+    "name": "Landkreis Wittmund",
+    "sorting": "Wittmund",
+    "bundeslandId": 3
+  },
+  "03158": {
+    "name": "Landkreis Wolfenbüttel",
+    "sorting": "Wolfenbüttel",
+    "bundeslandId": 3
+  },
+  "03103": {
+    "name": "Stadt Wolfsburg",
+    "sorting": "Wolfsburg, Stadt",
+    "bundeslandId": 3
+  },
+  "09479": {
+    "name": "Landkreis Wunsiedel i.Fichtelgebirge",
+    "sorting": "Wunsiedel i.Fichtelgebirge",
+    "bundeslandId": 9
+  },
+  "05124": {
+    "name": "Stadt Wuppertal",
+    "sorting": "Wuppertal, Stadt",
+    "bundeslandId": 5
+  },
+  "09663": {
+    "name": "Stadt Würzburg",
+    "sorting": "Würzburg",
+    "bundeslandId": 9
+  },
+  "09679": {
+    "name": "Landkreis Würzburg",
+    "sorting": "Würzburg",
+    "bundeslandId": 9
   },
   "08417": {
     "name": "Zollernalbkreis",

@@ -10,100 +10,107 @@
       crossorigin="anonymous"
     />
     <link href="assets/style.min.css" rel="stylesheet" />
-    <title>Corona in den Altersgruppen — Heatmap-Visualisierung der COVID-19-Sieben-Tage-Inzidenzen in den Landkreisen</title>
+    <title>Corona in den Altersgruppen — Heatmap-Visualisierung der COVID-19-Sieben-Tage-Inzidenzen in Landkreisen und kreisfreien Städten</title>
   </head>
   <body>
     <div class="container">
-      <header class="pt-5 offset-lg-1 col-lg-10">
+      <header class="pt-xl-5 pt-2 offset-xl-1 col-xl-10">
         <h1 class="display-3 text-muted">Corona in den Altersgruppen</h1>
-        <p class="lead text-muted">Visualisierung („Heatmap“) der COVID-19-Inzidenzwerte nach Altersgruppen in den Landkreisen<sup>*</sup></p>
-        <p class="text-muted text-end">
-          * aktuell nur für Baden-Württemberg und mit händischer Aktualisierung
+        <p class="lead text-muted">
+          Visualisierung („Heatmap“) der COVID-19-Inzidenzwerte nach Altersgruppen in Landkreisen und kreisfreien Städten<sup>*</sup>
         </p>
-        <dl class="row text-muted">
-          <dt class="col-md-2">Datenquellen</dt>
-          <dd class="col-md-10">
+        <p class="text-muted text-end">
+          * aktuell leider noch nicht flächendeckend, ist aber in Arbeit
+        </p>
+        <dl class="row text-muted pt-xl-4 pt-2">
+          <dt class="col-xl-3">Datenquellen</dt>
+          <dd class="col-xl-9">
             <p class="m-0">
               COVID-19-Fälle: Robert-Koch-Institut (<a href="https://npgeo-corona-npgeo-de.hub.arcgis.com/">COVID-19 Datenhub</a>); Bevölkerungszahlen:
               Statistisches Bundesamt (Destatis) (<a href="https://www-genesis.destatis.de/genesis/online">Genesis online</a>) (für die RKI-Altersgruppen via
               <a href="https://github.com/semohr/risikogebiete_deutschland">Risikogebiete Deutschland</a>)
             </p>
           </dd>
-          <dt class="col-md-2">Letzte Aktualisierung</dt>
-          <dd class="col-md-10">9. Mai 2021</dd>
-          <dt class="col-md-2">Autor</dt>
-          <dd class="col-md-10">Tobias Schächtelin (<a href="https://twitter.com/tschach">@tschach</a>)</dd>
-          <dt class="col-md-2">Nutzungsbedingungen</dt>
-          <dd class="col-md-10">
+          <dt class="col-xl-3">Letzte Aktualisierung</dt>
+          <dd class="col-xl-9">10. Mai 2021</dd>
+          <dt class="col-xl-3">Autor</dt>
+          <dd class="col-xl-9">Tobias Schächtelin (<a href="https://twitter.com/tschach">@tschach</a>)</dd>
+          <dt class="col-xl-3">Nutzungsbedingungen</dt>
+          <dd class="col-xl-9">
             Die angezeigten Diagramme sind gemeinfrei und dürfen ohne Zustimmung oder Namensnennung zu privaten oder kommerziellen Zwecken kopiert, verändert
             und verbreitet werden (<a href="https://creativecommons.org/publicdomain/zero/1.0/deed.de">CC-0-Lizenz</a>)
           </dd>
         </dl>
       </header>
-      <hr />
-      <section class="pb-3 offset-md-1 col-md-10">
-        <h2 class="text-muted">1. Kreis oder Stadt wählen</h2>
-        <div>
-          <select id="landkreisSelect" class="form-select">
-            <option value=""></option>
-          </select>
-        </div>
-      </section>
-      <section class="pb-3 offset-md-1 col-md-10">
-        <h2 class="text-muted">2. Zeitraum und Farbschema festlegen (optional)</h2>
-        <div class="row g-4">
-          <div class="col-md-10">
-            <label for="timeframe" class="form-label">Zeitraum</label>
-            <div class="btn-group d-flex w-100" role="group">
-              <input type="radio" class="btn-check w-100" name="timeframe" id="btnradio1" autocomplete="off" value="all" checked />
+      <hr class="offset-xl-2 col-xl-8" />
+      <section class="pt-xl-4 pt-2 offset-xl-1 col-xl-10">
+        <div class="row">
+          <div class="col-lg-4">
+            <label for="landkreisSelect" class="form-label">Kreis oder Stadt</label>
+            <select id="landkreisSelect" class="form-select" disabled>
+              <option value="">Bitte auswählen</option>
+            </select>
+          </div>
+          <div class="col-lg-4 pt-lg-0 pt-2">
+            <label class="form-label">Zeitraum</label>
+            <div class="d-grid gap-1" role="group">
+              <input type="radio" class="btn-check" name="timeframe" id="btnradio1" autocomplete="off" value="all" checked />
               <label class="btn btn-sm btn-outline-secondary" for="btnradio1">Ganze Pandemie</label>
 
-              <input type="radio" class="btn-check w-100" name="timeframe" id="btnradio2" autocomplete="off" value="oct2020" />
+              <input type="radio" class="btn-check" name="timeframe" id="btnradio2" autocomplete="off" value="oct2020" />
               <label class="btn btn-sm btn-outline-secondary" for="btnradio2">seit Oktober 2020</label>
 
-              <input type="radio" class="btn-check w-100" name="timeframe" id="btnradio3" autocomplete="off" value="jan2021" />
+              <input type="radio" class="btn-check" name="timeframe" id="btnradio3" autocomplete="off" value="jan2021" />
               <label class="btn btn-sm btn-outline-secondary" for="btnradio3">seit Januar 2021</label>
 
-              <input type="radio" class="btn-check w-100" name="timeframe" id="btnradio4" autocomplete="off" value="last28d" />
+              <input type="radio" class="btn-check" name="timeframe" id="btnradio4" autocomplete="off" value="last28d" />
               <label class="btn btn-sm btn-outline-secondary" for="btnradio4">letzte 4 Wochen</label>
 
-              <input type="radio" class="btn-check w-100" name="timeframe" id="btnradio5" autocomplete="off" value="last14d" />
+              <input type="radio" class="btn-check" name="timeframe" id="btnradio5" autocomplete="off" value="last14d" />
               <label class="btn btn-sm btn-outline-secondary" for="btnradio5">letzte 2 Wochen</label>
             </div>
           </div>
-          <div class="col-md-2">
-            <label for="colorSchemeSelect" class="form-label">Farbschema</label>
-            <select id="colorSchemeSelect" class="form-select form-select-sm">
-              <option value="DEFAULT">Standard</option>
-              <option value="RKIHEATMAP">RKI-Heatmap</option>
-            </select>
+          <div class="col-lg-4 pt-lg-0 pt-2">
+            <div class="d-flex h-100 flex-column justify-content-between">
+              <div>
+                <label class="form-label">Farbschema</label>
+                <div class="d-grid gap-1" role="group">
+                  <input type="radio" class="btn-check" name="colorscheme" id="btnradio11" autocomplete="off" value="DEFAULT" checked />
+                  <label class="btn btn-sm btn-outline-secondary" for="btnradio11">Standard</label>
+                  <input type="radio" class="btn-check" name="colorscheme" id="btnradio12" autocomplete="off" value="RKIHEATMAP" />
+                  <label class="btn btn-sm btn-outline-secondary" for="btnradio12">RKI-Heatmap</label>
+                </div>
+              </div>
+              <div class="pt-lg-0 pt-2">
+                <div class="d-grid gap-1" role="group">
+                  <button id="updateChartsButton" type="button" class="btn btn-sm btn-dark">
+                    Diagramm anzeigen oder aktualisieren
+                  </button>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
-      <section class="pb-3" id="resultsContainer">
-        <div class="offset-md-1 col-md-10 d-flex w-100">
-          <h2 class="text-muted">3. Ergebnisse</h2>
-          <div style="align-self: center; margin-left: 4rem;">
-            <button id="updateChartsButton" type="button" class="btn btn-sm btn-primary">
-              Ergebnisse anzeigen oder aktualisieren
-            </button>
-          </div>
-        </div>
-        <div id="canvasContainer" class="bg-white"></div>
-        <div id="legendContainer" class="mt-3 offset-md-1 col-md-10 text-muted"></div>
+      <hr class="offset-xl-2 col-xl-8" />
+      <section class="pt-xl-4 pt-2 pb-xl-4 pb-2" id="resultsContainer">
+        <div id="canvasContainer" class="row-full" style="min-height:1rem;transition: height 1s ease-out;"></div>
+        <div id="legendContainer" class="mt-3 offset-xl-1 col-xl-10 text-muted"></div>
       </section>
-      <hr />
-      <section class="pb-5 offset-md-1 col-md-10">
+      <hr class="offset-xl-2 col-xl-8" />
+      <section class="pt-2 offset-xl-1 col-xl-10">
         <p class="text-muted">
           „Corona in den Altersgruppen“ ist inspiriert von <a href="https://semohr.github.io/risikogebiete_deutschland/">Risikogebiete Deutschland</a>,
           <a href="https://rsalzer.github.io/COVID_19_AGE/">Corona-Fälle in der Schweiz nach Alter</a>,
           <a href="https://api.corona-zahlen.org">Robert Koch-Institut API</a>,
           <a href="https://www.designtagebuch.de/datenvisualisierung-deutschland-in-der-dritten-welle/">Datenvisualisierung: Deutschland in der dritten Welle</a
           >, <a href="https://corona7tage.herokuapp.com/">COVID-19 Neuinfektionen und Intensivfälle</a>,
-          <a href="https://corona-data.eu/">SARS-CoV2 Infektions­fälle als Heatmaps für Deutschland</a> und den Menschen hinter den Projekten. Teile meines
-          Codes sind aus diesen Projekten übernommen.
+          <a href="https://corona-data.eu/">SARS-CoV2 Infektions­fälle als Heatmaps für Deutschland</a> und den Menschen hinter diesen Projekten. Neben vielen
+          Ideen habe ich auch den einen oder anderen Codeschnippsel und Daten daraus übernommen.
         </p>
-        <p class="text-muted"><a href="https://github.com/tschach/covaltvis">Quellcode und Datensätze</a>. Alle Angaben ohne Gewähr.</p>
+        <p class="text-muted">
+          <a href="https://github.com/tschach/covaltvis">Quellcode und Datensätze</a>. Alle Angaben ohne Gewähr. Offensichtliche Fehler gerne melden.
+        </p>
       </section>
     </div>
 

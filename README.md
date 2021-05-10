@@ -1,2 +1,5 @@
-# covaltvis
-Visualisierung der 7-Tage-Inzidenzen von COVID-19-Erkrankungen nach Altersgruppen und Landkreisen
+# Corona in den Altersgruppen
+
+Visualisierung („Heatmap“) der COVID-19-Inzidenzwerte nach Altersgruppen in Landkreisen und kreisfreien Städten
+
+- https://tschach.github.io/covaltvis/

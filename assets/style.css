@@ -1,5 +1,15 @@
 body {
   background-color: #f0f8ff;
+  overflow-x: hidden;
+}
+
+.row-full {
+  width: 100vw;
+  position: relative;
+  margin-left: -50vw;
+  left: 50%;
+  background-color: rgb(218, 226, 235);
+  padding: 1rem;
 }
 
 .container {

@@ -1,5 +1,5 @@
 (function() {
-  let devMode = true;
+  let devMode = false;
 
   let landkreise = {};
 
@@ -207,6 +207,7 @@
         {
           label: "",
           data: [],
+          borderWidth: 0,
           backgroundColor: function(ctx) {
             let colorScheme = selectedColorScheme || "DEFAULT";
             let value = ctx.dataset.data[ctx.dataIndex].v;
@@ -225,7 +226,14 @@
             if (!a) {
               return 0;
             }
-            return (a.bottom - a.top) / ageGroups.length;
+            return (a.bottom - a.top) / ageGroups.length + 1;
+          },
+          width(context) {
+            const a = context.chart.chartArea;
+            if (!a) {
+              return 0;
+            }
+            return (a.right - a.left) / context.chart.scales.x.ticks.length + 1;
           }
         }
       ]
@@ -274,16 +282,30 @@
           type: "time",
           offset: true,
           time: {
-            unit: "day"
+            unit: "week",
+            isoWeekday: 1,
+            displayFormats: {
+              week: "DD.MM.YY",
+              day: "DD.MM.YY"
+            }
           },
           ticks: {
             font: {
               size: 14,
               family: "Monospace"
             },
-            color: "#333"
+            color: "#333",
+            maxRotation: 90,
+            minRotation: 90,
+            autoSkip: true,
+            padding: 0
           },
           grid: {
+            display: false,
+            drawBorder: false,
+            tickMarkLength: 0
+          },
+          gridLines: {
             display: false
           }
         },
@@ -305,6 +327,11 @@
             padding: 7.5
           },
           grid: {
+            display: false,
+            drawBorder: false,
+            tickMarkLength: 0
+          },
+          gridLines: {
             display: false
           }
         }
@@ -319,30 +346,23 @@
         selectedLandkreise.push(option.value);
       }
     }
-    //updateCharts();
   }
 
-  function colorSchemeSelectOnChange(selectObject) {
-    for (const [key, option] of Object.entries(selectObject.target.options)) {
-      if (option.selected) {
-        selectedColorScheme = option.value;
-        break;
-      }
-    }
-
-    //updateCharts();
+  function colorSchemeSelectOnChange(eventObject) {
+    selectedColorScheme = eventObject.target.value;
   }
 
   function updateLegend(landkreisId) {
     document.getElementById("legendContainer").replaceChildren();
 
-    let element = document.createElement("h3");
-    element.setAttribute("class", "text-muted");
-    element.innerText = "Erläuterungen";
-    document.getElementById("legendContainer").appendChild(element);
-    element = document.createElement("h4");
-    element.setAttribute("class", "text-muted");
-    element.innerText = "7-Tage-Inzidenzwert der Altersgruppe (an diesem Tag gemeldete COVID-19-Fälle pro 100.000 Personen)";
+    let element = document.createElement("dl");
+    element.setAttribute("class", "row text-muted");
+    element.innerHTML = `<dt class="col-xl-3">X-Achse</dt>
+    <dd class="col-xl-9">zeitlicher Verlauf</dd>
+    <dt class="col-xl-3">Y-Achse</dt>
+    <dd class="col-xl-9">Altersgruppen (Einteilung vorgegeben durch den Datenbestand des Robert-Koch-Institus)</dd>
+    <dt class="col-xl-3">Farbschema</dt>
+    <dd class="col-xl-9">7-Tage-Inzidenzwerte (gemeldete COVID-19-Fälle pro 100.000 Personen in der Altersgruppe). Tage ohne Daten werden in der Kategorie „>0–5“ dargestellt.</dd>`;
     document.getElementById("legendContainer").appendChild(element);
 
     const ul = document.createElement("ul");
@@ -350,7 +370,7 @@
 
     colorSchemes[selectedColorScheme].ranges.forEach(range => {
       const li = document.createElement("li");
-      li.setAttribute("class", "list-inline-item col-2");
+      li.setAttribute("class", "list-inline-item col-lg-2 col-md-3 col-sm-4 col-6");
       let legendString = `>&#8201;${range.min}&#8239;&#8211;&#8201;${isFinite(range.max) ? range.max : ""}`;
 
       li.innerHTML = `<span style="background-color:${range.color};height:16px;width:16px;margin-right:8px;display:inline-block"></span><span style="vertical-align:text-bottom">${legendString}</span>`;
@@ -373,26 +393,30 @@
     switch (timeframe) {
       case "oct2020":
         fromDate = "2020-10-01";
+        matrixChartConfig.options.scales.x.time.unit = "week";
         break;
       case "jan2021":
         fromDate = "2021-01-01";
+        matrixChartConfig.options.scales.x.time.unit = "week";
         break;
       case "last28d":
         now.setDate(now.getDate() - 28);
         fromDate = formatDate2(now);
+        matrixChartConfig.options.scales.x.time.unit = "day";
         break;
       case "last14d":
         now.setDate(now.getDate() - 14);
         fromDate = formatDate2(now);
+        matrixChartConfig.options.scales.x.time.unit = "day";
         break;
       default:
         fromDate = null;
+        matrixChartConfig.options.scales.x.time.unit = "week";
     }
   }
 
   function updateChartsButtonOnChange() {
     updateCharts(fromDate, toDate);
-    document.getElementById("resultsContainer").scrollIntoView(true);
   }
 
   function getLandkreisData(landkreisId) {
@@ -417,7 +441,7 @@
     const canvasId = `matrixChartCanvas${landkreisId}`;
     const canvasElement = document.createElement("canvas");
     canvasElement.setAttribute("id", canvasId);
-    canvasElement.setAttribute("style", "width:100%;height:400px;");
+    canvasElement.setAttribute("style", "width:100%;height:33vw;max-height:400px;");
     document.getElementById("canvasContainer").appendChild(canvasElement);
     return canvasId;
   }
@@ -465,14 +489,17 @@
         .then(function() {
           // always executed
         });
+      document.getElementById("resultsContainer").scrollIntoView(true);
     });
   }
 
   document.getElementById("landkreisSelect").addEventListener("change", event => landkreisSelectOnChange(event));
 
-  document.getElementById("colorSchemeSelect").addEventListener("change", event => colorSchemeSelectOnChange(event));
-
   document.getElementById("updateChartsButton").addEventListener("click", updateChartsButtonOnChange);
+
+  document.querySelectorAll("input[name=colorscheme]").forEach(input => {
+    input.addEventListener("change", event => colorSchemeSelectOnChange(event));
+  });
 
   document.querySelectorAll("input[name=timeframe]").forEach(input => {
     input.addEventListener("change", event => updateTimeframeRadioOnChange(event));
@@ -484,14 +511,24 @@
     axios.get("assets/landkreise.json").then(response => {
       if (response.data) {
         landkreise = {};
-        for (const [key, value] of Object.entries(response.data)) {
-          let agsPadded = ("0000" + key).slice(-5);
-          landkreise[agsPadded] = value;
-          const optionElement = document.createElement("option");
-          optionElement.setAttribute("value", agsPadded);
-          optionElement.innerText = `${value.name}`;
-          document.getElementById("landkreisSelect").appendChild(optionElement);
-        }
+
+        Object.keys(response.data)
+          .sort(function(a, b) {
+            if (response.data[a].sorting > response.data[b].sorting) return 1;
+            else if (response.data[a].sorting < response.data[b].sorting) return -1;
+            else return 0;
+          })
+          .forEach(function(key) {
+            const value = response.data[key];
+            let agsPadded = ("0000" + key).slice(-5);
+            landkreise[agsPadded] = value;
+            const optionElement = document.createElement("option");
+            optionElement.setAttribute("value", agsPadded);
+            optionElement.innerText = `${value.name}`;
+            document.getElementById("landkreisSelect").appendChild(optionElement);
+          });
+
+        document.getElementById("landkreisSelect").disabled = false;
         if (devMode === true) {
           selectedLandkreise = [Object.keys(landkreise)[0]];
           updateCharts();
