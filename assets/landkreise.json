@@ -1,7 +1,7 @@
 {
   "10041": {
     "name": "Regionalverband Saarbrücken",
-    "sorting": "Saarbruecken",
+    "sorting": "Saarbrücken",
     "bundeslandId": 10
   },
   "10042": {
@@ -409,6 +409,11 @@
     "sorting": "Altenburger Land",
     "bundeslandId": 16
   },
+  "07131": {
+    "name": "Landkreis Ahrweiler",
+    "sorting": "Ahrweiler",
+    "bundeslandId": 7
+  },
   "09771": {
     "name": "Landkreis Aichach-Friedberg",
     "sorting": "Aichach-Friedberg",
@@ -419,10 +424,20 @@
     "sorting": "Alb-Donau-Kreis",
     "bundeslandId": 8
   },
+  "07132": {
+    "name": "Landkreis Altenkirchen (Westerwald)",
+    "sorting": "Altenkirchen (Westerwald)",
+    "bundeslandId": 7
+  },
   "09171": {
     "name": "Landkreis Altötting",
     "sorting": "Altötting",
     "bundeslandId": 9
+  },
+  "07331": {
+    "name": "Landkreis Alzey-Worms",
+    "sorting": "Alzey-Worms",
+    "bundeslandId": 7
   },
   "09361": {
     "name": "Stadt Amberg",
@@ -474,10 +489,20 @@
     "sorting": "Aurich",
     "bundeslandId": 3
   },
+  "07332": {
+    "name": "Landkreis Bad Dürkheim",
+    "sorting": "Bad Dürkheim",
+    "bundeslandId": 7
+  },
   "09672": {
     "name": "Landkreis Bad Kissingen",
     "sorting": "Bad Kissingen",
     "bundeslandId": 9
+  },
+  "07133": {
+    "name": "Landkreis Bad Kreuznach",
+    "sorting": "Bad Kreuznach",
+    "bundeslandId": 7
   },
   "09173": {
     "name": "Landkreis Bad Tölz-Wolfratshausen",
@@ -514,6 +539,16 @@
     "sorting": "Berchtesgadener Land",
     "bundeslandId": 9
   },
+  "06431": {
+    "name": "Landkreis Bergstraße",
+    "sorting": "Bergstraße",
+    "bundeslandId": 6
+  },
+  "07231": {
+    "name": "Landkreis Bernkastel-Wittlich",
+    "sorting": "Bernkastel-Wittlich",
+    "bundeslandId": 7
+  },
   "08426": {
     "name": "Landkreis Biberach",
     "sorting": "Biberach",
@@ -523,6 +558,11 @@
     "name": "Stadt Bielefeld",
     "sorting": "Bielefeld, Stadt",
     "bundeslandId": 5
+  },
+  "07134": {
+    "name": "Landkreis Birkenfeld",
+    "sorting": "Birkenfeld",
+    "bundeslandId": 7
   },
   "08115": {
     "name": "Landkreis Böblingen",
@@ -604,6 +644,11 @@
     "sorting": "Coburg",
     "bundeslandId": 9
   },
+  "07135": {
+    "name": "Landkreis Cochem-Zell",
+    "sorting": "Cochem-Zell",
+    "bundeslandId": 7
+  },
   "05558": {
     "name": "Landkreis Coesfeld",
     "sorting": "Coesfeld",
@@ -618,6 +663,16 @@
     "name": "Landkreis Dachau",
     "sorting": "Dachau",
     "bundeslandId": 9
+  },
+  "06432": {
+    "name": "Landkreis Darmstadt-Dieburg",
+    "sorting": "Darmstadt-Dieburg",
+    "bundeslandId": 6
+  },
+  "06411": {
+    "name": "Stadt Darmstadt",
+    "sorting": "Darmstadt, Wissenschaftsstadt",
+    "bundeslandId": 6
   },
   "09271": {
     "name": "Landkreis Deggendorf",
@@ -654,6 +709,11 @@
     "sorting": "Donau-Ries",
     "bundeslandId": 9
   },
+  "07333": {
+    "name": "Donnersbergkreis",
+    "sorting": "Donnersbergkreis",
+    "bundeslandId": 7
+  },
   "05913": {
     "name": "Stadt Dortmund",
     "sorting": "Dortmund, Stadt",
@@ -683,6 +743,11 @@
     "name": "Landkreis Eichstätt",
     "sorting": "Eichstätt",
     "bundeslandId": 9
+  },
+  "07232": {
+    "name": "Eifelkreis Bitburg-Prüm",
+    "sorting": "Eifelkreis Bitburg-Prüm",
+    "bundeslandId": 7
   },
   "03402": {
     "name": "Stadt Emden",
@@ -749,6 +814,16 @@
     "sorting": "Forchheim",
     "bundeslandId": 9
   },
+  "07311": {
+    "name": "Stadt Frankenthal (Pfalz)",
+    "sorting": "Frankenthal (Pfalz), kreisfreie Stadt",
+    "bundeslandId": 7
+  },
+  "06412": {
+    "name": "Stadt Frankfurt am Main",
+    "sorting": "Frankfurt am Main, Stadt",
+    "bundeslandId": 6
+  },
   "08311": {
     "name": "Stadt Freiburg im Breisgau",
     "sorting": "Freiburg im Breisgau",
@@ -773,6 +848,11 @@
     "name": "Landkreis Friesland",
     "sorting": "Friesland",
     "bundeslandId": 3
+  },
+  "06631": {
+    "name": "Landkreis Fulda",
+    "sorting": "Fulda",
+    "bundeslandId": 6
   },
   "09179": {
     "name": "Landkreis Fürstenfeldbruck",
@@ -799,6 +879,16 @@
     "sorting": "Gelsenkirchen, Stadt",
     "bundeslandId": 5
   },
+  "07334": {
+    "name": "Landkreis Germersheim",
+    "sorting": "Germersheim",
+    "bundeslandId": 7
+  },
+  "06531": {
+    "name": "Landkreis Gießen",
+    "sorting": "Gießen",
+    "bundeslandId": 6
+  },
   "03151": {
     "name": "Landkreis Gifhorn",
     "sorting": "Gifhorn",
@@ -823,6 +913,11 @@
     "name": "Grafschaft Bentheim",
     "sorting": "Grafschaft Bentheim",
     "bundeslandId": 3
+  },
+  "06433": {
+    "name": "Landkreis Groß-Gerau",
+    "sorting": "Groß-Gerau",
+    "bundeslandId": 6
   },
   "09774": {
     "name": "Landkreis Günzburg",
@@ -914,6 +1009,11 @@
     "sorting": "Herne, Stadt",
     "bundeslandId": 5
   },
+  "06632": {
+    "name": "Landkreis Hersfeld-Rotenburg",
+    "sorting": "Hersfeld-Rotenburg",
+    "bundeslandId": 6
+  },
   "03254": {
     "name": "Landkreis Hildesheim",
     "sorting": "Hildesheim",
@@ -923,6 +1023,11 @@
     "name": "Hochsauerlandkreis",
     "sorting": "Hochsauerlandkreis",
     "bundeslandId": 5
+  },
+  "06434": {
+    "name": "Hochtaunuskreis",
+    "sorting": "Hochtaunuskreis",
+    "bundeslandId": 6
   },
   "09464": {
     "name": "Stadt Hof",
@@ -954,6 +1059,16 @@
     "sorting": "Ingolstadt",
     "bundeslandId": 9
   },
+  "07335": {
+    "name": "Landkreis Kaiserslautern",
+    "sorting": "Kaiserslautern",
+    "bundeslandId": 7
+  },
+  "07312": {
+    "name": "Stadt Kaiserslautern",
+    "sorting": "Kaiserslautern, kreisfreie Stadt",
+    "bundeslandId": 7
+  },
   "08215": {
     "name": "Landkreis Karlsruhe",
     "sorting": "Karlsruhe",
@@ -963,6 +1078,16 @@
     "name": "Stadt Karlsruhe",
     "sorting": "Karlsruhe,",
     "bundeslandId": 8
+  },
+  "06633": {
+    "name": "Landkreis Kassel",
+    "sorting": "Kassel",
+    "bundeslandId": 6
+  },
+  "06611": {
+    "name": "Stadt Kassel",
+    "sorting": "Kassel, documenta-Stadt",
+    "bundeslandId": 6
   },
   "09762": {
     "name": "Stadt Kaufbeuren",
@@ -994,6 +1119,11 @@
     "sorting": "Kleve",
     "bundeslandId": 5
   },
+  "07111": {
+    "name": "Stadt Koblenz",
+    "sorting": "Koblenz, kreisfreie Stadt",
+    "bundeslandId": 7
+  },
   "05315": {
     "name": "Stadt Köln",
     "sorting": "Köln, Stadt",
@@ -1018,6 +1148,21 @@
     "name": "Landkreis Kulmbach",
     "sorting": "Kulmbach",
     "bundeslandId": 9
+  },
+  "07336": {
+    "name": "Landkreis Kusel",
+    "sorting": "Kusel",
+    "bundeslandId": 7
+  },
+  "06532": {
+    "name": "Lahn-Dill-Kreis",
+    "sorting": "Lahn-Dill-Kreis",
+    "bundeslandId": 6
+  },
+  "07313": {
+    "name": "Stadt Landau in der Pfalz",
+    "sorting": "Landau in der Pfalz, kreisfreie Stadt",
+    "bundeslandId": 7
   },
   "09181": {
     "name": "Landkreis Landsberg am Lech",
@@ -1054,6 +1199,11 @@
     "sorting": "Lichtenfels",
     "bundeslandId": 9
   },
+  "06533": {
+    "name": "Landkreis Limburg-Weilburg",
+    "sorting": "Limburg-Weilburg",
+    "bundeslandId": 6
+  },
   "09776": {
     "name": "Landkreis Lindau (Bodensee)",
     "sorting": "Lindau (Bodensee)",
@@ -1084,10 +1234,20 @@
     "sorting": "Ludwigsburg",
     "bundeslandId": 8
   },
+  "07314": {
+    "name": "Stadt Ludwigshafen am Rhein",
+    "sorting": "Ludwigshafen am Rhein, kreisfreie Stadt",
+    "bundeslandId": 7
+  },
   "03355": {
     "name": "Landkreis Lüneburg",
     "sorting": "Lüneburg",
     "bundeslandId": 3
+  },
+  "06435": {
+    "name": "Main-Kinzig-Kreis",
+    "sorting": "Main-Kinzig-Kreis",
+    "bundeslandId": 6
   },
   "09677": {
     "name": "Landkreis Main-Spessart",
@@ -1099,15 +1259,40 @@
     "sorting": "Main-Tauber-Kreis",
     "bundeslandId": 8
   },
+  "06436": {
+    "name": "Main-Taunus-Kreis",
+    "sorting": "Main-Taunus-Kreis",
+    "bundeslandId": 6
+  },
+  "07339": {
+    "name": "Landkreis Mainz-Bingen",
+    "sorting": "Mainz-Bingen",
+    "bundeslandId": 7
+  },
+  "07315": {
+    "name": "Stadt Mainz",
+    "sorting": "Mainz, kreisfreie Stadt",
+    "bundeslandId": 7
+  },
   "08222": {
     "name": "Stadt Mannheim",
     "sorting": "Mannheim",
     "bundeslandId": 8
   },
+  "06534": {
+    "name": "Landkreis Marburg-Biedenkopf",
+    "sorting": "Marburg-Biedenkopf",
+    "bundeslandId": 6
+  },
   "05962": {
     "name": "Märkischer Kreis",
     "sorting": "Märkischer Kreis",
     "bundeslandId": 5
+  },
+  "07137": {
+    "name": "Landkreis Mayen-Koblenz",
+    "sorting": "Mayen-Koblenz",
+    "bundeslandId": 7
   },
   "09764": {
     "name": "Stadt Memmingen",
@@ -1199,6 +1384,16 @@
     "sorting": "Neustadt a.d.Waldnaab",
     "bundeslandId": 9
   },
+  "07316": {
+    "name": "Stadt Neustadt an der Weinstraße",
+    "sorting": "Neustadt an der Weinstraße, kreisfreie Stadt",
+    "bundeslandId": 7
+  },
+  "07138": {
+    "name": "Landkreis Neuwied",
+    "sorting": "Neuwied",
+    "bundeslandId": 7
+  },
   "03256": {
     "name": "Landkreis Nienburg (Weser)",
     "sorting": "Nienburg (Weser)",
@@ -1238,6 +1433,21 @@
     "name": "Stadt Oberhausen",
     "sorting": "Oberhausen, Stadt",
     "bundeslandId": 5
+  },
+  "06437": {
+    "name": "Odenwaldkreis",
+    "sorting": "Odenwaldkreis",
+    "bundeslandId": 6
+  },
+  "06438": {
+    "name": "Landkreis Offenbach",
+    "sorting": "Offenbach",
+    "bundeslandId": 6
+  },
+  "06413": {
+    "name": "Stadt Offenbach am Main",
+    "sorting": "Offenbach am Main, Stadt",
+    "bundeslandId": 6
   },
   "03458": {
     "name": "Landkreis Oldenburg",
@@ -1324,6 +1534,11 @@
     "sorting": "Pinneberg",
     "bundeslandId": 1
   },
+  "07317": {
+    "name": "Stadt Pirmasens",
+    "sorting": "Pirmasens, kreisfreie Stadt",
+    "bundeslandId": 7
+  },
   "01057": {
     "name": "Landkreis Plön",
     "sorting": "Plön",
@@ -1384,20 +1599,40 @@
     "sorting": "Rhein-Erft-Kreis",
     "bundeslandId": 5
   },
+  "07140": {
+    "name": "Rhein-Hunsrück-Kreis",
+    "sorting": "Rhein-Hunsrück-Kreis",
+    "bundeslandId": 7
+  },
   "05162": {
     "name": "Rhein-Kreis Neuss",
     "sorting": "Rhein-Kreis Neuss",
     "bundeslandId": 5
+  },
+  "07141": {
+    "name": "Rhein-Lahn-Kreis",
+    "sorting": "Rhein-Lahn-Kreis",
+    "bundeslandId": 7
   },
   "08226": {
     "name": "Rhein-Neckar-Kreis",
     "sorting": "Rhein-Neckar-Kreis",
     "bundeslandId": 8
   },
+  "07338": {
+    "name": "Rhein-Pfalz-Kreis",
+    "sorting": "Rhein-Pfalz-Kreis",
+    "bundeslandId": 7
+  },
   "05382": {
     "name": "Rhein-Sieg-Kreis",
     "sorting": "Rhein-Sieg-Kreis",
     "bundeslandId": 5
+  },
+  "06439": {
+    "name": "Rheingau-Taunus-Kreis",
+    "sorting": "Rheingau-Taunus-Kreis",
+    "bundeslandId": 6
   },
   "05378": {
     "name": "Rheinisch-Bergischer Kreis",
@@ -1464,6 +1699,11 @@
     "sorting": "Schwäbisch Hall",
     "bundeslandId": 8
   },
+  "06634": {
+    "name": "Schwalm-Eder-Kreis",
+    "sorting": "Schwalm-Eder-Kreis",
+    "bundeslandId": 6
+  },
   "09376": {
     "name": "Landkreis Schwandorf",
     "sorting": "Schwandorf",
@@ -1508,6 +1748,11 @@
     "name": "Stadt Solingen",
     "sorting": "Solingen, Klingenstadt",
     "bundeslandId": 5
+  },
+  "07318": {
+    "name": "Stadt Speyer",
+    "sorting": "Speyer, kreisfreie Stadt",
+    "bundeslandId": 7
   },
   "03359": {
     "name": "Landkreis Stade",
@@ -1554,6 +1799,16 @@
     "sorting": "Stuttgart",
     "bundeslandId": 8
   },
+  "07337": {
+    "name": "Landkreis Südliche Weinstraße",
+    "sorting": "Südliche Weinstraße",
+    "bundeslandId": 7
+  },
+  "07340": {
+    "name": "Landkreis Südwestpfalz",
+    "sorting": "Südwestpfalz",
+    "bundeslandId": 7
+  },
   "09377": {
     "name": "Landkreis Tirschenreuth",
     "sorting": "Tirschenreuth",
@@ -1563,6 +1818,16 @@
     "name": "Landkreis Traunstein",
     "sorting": "Traunstein",
     "bundeslandId": 9
+  },
+  "07235": {
+    "name": "Landkreis Trier-Saarburg",
+    "sorting": "Trier-Saarburg",
+    "bundeslandId": 7
+  },
+  "07211": {
+    "name": "Stadt Trier",
+    "sorting": "Trier, kreisfreie Stadt",
+    "bundeslandId": 7
   },
   "08416": {
     "name": "Landkreis Tübingen",
@@ -1609,6 +1874,21 @@
     "sorting": "Viersen",
     "bundeslandId": 5
   },
+  "06535": {
+    "name": "Vogelsbergkreis",
+    "sorting": "Vogelsbergkreis",
+    "bundeslandId": 6
+  },
+  "07233": {
+    "name": "Landkreis Vulkaneifel",
+    "sorting": "Vulkaneifel",
+    "bundeslandId": 7
+  },
+  "06635": {
+    "name": "Landkreis Waldeck-Frankenberg",
+    "sorting": "Waldeck-Frankenberg",
+    "bundeslandId": 6
+  },
   "08337": {
     "name": "Landkreis Waldshut",
     "sorting": "Waldshut",
@@ -1634,6 +1914,11 @@
     "sorting": "Weißenburg-Gunzenhausen",
     "bundeslandId": 9
   },
+  "06636": {
+    "name": "Werra-Meißner-Kreis",
+    "sorting": "Werra-Meißner-Kreis",
+    "bundeslandId": 6
+  },
   "05170": {
     "name": "Landkreis Wesel",
     "sorting": "Wesel",
@@ -1643,6 +1928,21 @@
     "name": "Landkreis Wesermarsch",
     "sorting": "Wesermarsch",
     "bundeslandId": 3
+  },
+  "07143": {
+    "name": "Westerwaldkreis",
+    "sorting": "Westerwaldkreis",
+    "bundeslandId": 7
+  },
+  "06440": {
+    "name": "Wetteraukreis",
+    "sorting": "Wetteraukreis",
+    "bundeslandId": 6
+  },
+  "06414": {
+    "name": "Stadt Wiesbaden",
+    "sorting": "Wiesbaden, Landeshauptstadt",
+    "bundeslandId": 6
   },
   "03405": {
     "name": "Stadt Wilhelmshaven",
@@ -1663,6 +1963,11 @@
     "name": "Stadt Wolfsburg",
     "sorting": "Wolfsburg, Stadt",
     "bundeslandId": 3
+  },
+  "07319": {
+    "name": "Stadt Worms",
+    "sorting": "Worms, kreisfreie Stadt",
+    "bundeslandId": 7
   },
   "09479": {
     "name": "Landkreis Wunsiedel i.Fichtelgebirge",
@@ -1688,5 +1993,10 @@
     "name": "Zollernalbkreis",
     "sorting": "Zollernalbkreis",
     "bundeslandId": 8
+  },
+  "07320": {
+    "name": "Stadt Zweibrücken",
+    "sorting": "Zweibrücken, kreisfreie Stadt",
+    "bundeslandId": 7
   }
 }
