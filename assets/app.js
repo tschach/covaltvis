@@ -4,8 +4,10 @@
   let landkreise = {};
 
   const textLabels = {
-    matrixChartTitle: (x, y) => `${x}: Corona-7-Tage-Inzidenzwerte nach Altersgruppen, Stand: ${y}`
+    matrixChartTitle: (x, y) => `${x}: COVID-19 7-Tage-Inzidenzwerte nach Altersgruppen, Stand: ${y}`
   };
+
+  let numberOfDays = 0;
 
   let selectedLandkreise = [];
 
@@ -167,7 +169,7 @@
         {
           min: 50,
           max: 100,
-          color: "#ff8700"
+          color: "#ffbd00"
         },
         {
           min: 100,
@@ -207,7 +209,12 @@
         {
           label: "",
           data: [],
-          borderWidth: 0,
+          borderWidth: function(ctx) {
+            if ((ctx.raw.y = "total")) {
+              return { top: 2 };
+            }
+            return 0;
+          },
           backgroundColor: function(ctx) {
             let colorScheme = selectedColorScheme || "DEFAULT";
             let value = ctx.dataset.data[ctx.dataIndex].v;
@@ -233,7 +240,7 @@
             if (!a) {
               return 0;
             }
-            return (a.right - a.left) / context.chart.scales.x.ticks.length + 1;
+            return (a.right - a.left) / numberOfDays + 1;
           }
         }
       ]
@@ -247,19 +254,7 @@
       },
       plugins: {
         title: {
-          display: true,
-          position: "top",
-          align: "center",
-          text: "Corona-7-Tage-Inzidenzwerte je Altersgruppe im Landkreis Görlitz, Stand: ",
-          padding: {
-            top: 0,
-            bottom: 15
-          },
-          font: {
-            size: 18,
-            family: "Monospace"
-          },
-          color: "#666"
+          display: false
         },
         tooltip: {
           displayColors: false,
@@ -283,6 +278,7 @@
           offset: true,
           time: {
             unit: "week",
+            round: "day",
             isoWeekday: 1,
             displayFormats: {
               week: "DD.MM.YY",
@@ -360,7 +356,7 @@
     element.innerHTML = `<dt class="col-xl-3">X-Achse</dt>
     <dd class="col-xl-9">zeitlicher Verlauf</dd>
     <dt class="col-xl-3">Y-Achse</dt>
-    <dd class="col-xl-9">Altersgruppen (Einteilung vorgegeben durch den Datenbestand des Robert-Koch-Institus)</dd>
+    <dd class="col-xl-9">Altersgruppen (Einteilung vorgegeben durch den Datenbestand des Robert-Koch-Institus) und Gesamtbevölkerung</dd>
     <dt class="col-xl-3">Farbschema</dt>
     <dd class="col-xl-9">7-Tage-Inzidenzwerte (gemeldete COVID-19-Fälle pro 100.000 Personen in der Altersgruppe). Tage ohne Daten werden in der Kategorie „>0–5“ dargestellt.</dd>`;
     document.getElementById("legendContainer").appendChild(element);
@@ -450,6 +446,7 @@
     fromDate = fromDate || "2020-01-27";
     toDate = toDate || "2050-12-31";
     document.getElementById("canvasContainer").replaceChildren();
+    numberOfDays = 0;
 
     selectedLandkreise.forEach(landkreisId => {
       let canvasId = initMatrixChart(landkreisId);
@@ -473,14 +470,20 @@
             }
 
             matrixChartConfig.data.datasets[0].data = dataset;
-            matrixChartConfig.options.plugins.title.text = textLabels.matrixChartTitle(landkreise[landkreisId].name, formatDate(new Date(lastDate)));
-            //matrixChartConfig.options.plugins.title.text + lastDate;
+            numberOfDays = dataset.length / ageGroups.length;
+
+            const titleElement = document.createElement("h2");
+            titleElement.setAttribute("class", "offset-xl-1 col-xl-10 lead");
+            titleElement.innerText = textLabels.matrixChartTitle(landkreise[landkreisId].name, formatDate(new Date(lastDate)));
+            document.getElementById("titleContainer").replaceChildren(titleElement);
 
             var ctx = document.getElementById(canvasId).getContext("2d");
 
             var matrixChart = new Chart(ctx, matrixChartConfig);
 
             updateLegend(landkreisId);
+
+            document.getElementById("resultsContainer").scrollIntoView(true);
           }
         })
         .catch(function(error) {
@@ -489,7 +492,6 @@
         .then(function() {
           // always executed
         });
-      document.getElementById("resultsContainer").scrollIntoView(true);
     });
   }
 
