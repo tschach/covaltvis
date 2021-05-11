@@ -1998,5 +1998,10 @@
     "name": "Stadt Zweibrücken",
     "sorting": "Zweibrücken, kreisfreie Stadt",
     "bundeslandId": 7
+  },
+  "11000": {
+    "name": "Stadt Berlin",
+    "sorting": "Berlin",
+    "bundeslandId": 11
   }
 }
