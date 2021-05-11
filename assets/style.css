@@ -9,7 +9,13 @@ body {
   margin-left: -50vw;
   left: 50%;
   background-color: rgb(218, 226, 235);
-  padding: 1rem;
+  padding: 1rem 0;
+}
+
+@media (min-width: 1200px) {
+  .row-full {
+    padding: 1rem;
+  }
 }
 
 .container {

@@ -320,7 +320,8 @@
               family: "Monospace"
             },
             color: "#333",
-            padding: 7.5
+            padding: 7.5,
+            autoSkip: false
           },
           grid: {
             display: false,
@@ -437,7 +438,7 @@
     const canvasId = `matrixChartCanvas${landkreisId}`;
     const canvasElement = document.createElement("canvas");
     canvasElement.setAttribute("id", canvasId);
-    canvasElement.setAttribute("style", "width:100%;height:33vw;max-height:400px;");
+    canvasElement.setAttribute("style", "width:100%;height:33vw;max-height:400px;min-height:250px;");
     document.getElementById("canvasContainer").appendChild(canvasElement);
     return canvasId;
   }
