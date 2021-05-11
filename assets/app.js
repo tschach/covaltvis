@@ -209,12 +209,7 @@
         {
           label: "",
           data: [],
-          borderWidth: function(ctx) {
-            if ((ctx.raw.y = "total")) {
-              return { top: 2 };
-            }
-            return 0;
-          },
+          borderWidth: 0,
           backgroundColor: function(ctx) {
             let colorScheme = selectedColorScheme || "DEFAULT";
             let value = ctx.dataset.data[ctx.dataIndex].v;
@@ -354,12 +349,7 @@
 
     let element = document.createElement("dl");
     element.setAttribute("class", "row text-muted");
-    element.innerHTML = `<dt class="col-xl-3">X-Achse</dt>
-    <dd class="col-xl-9">zeitlicher Verlauf</dd>
-    <dt class="col-xl-3">Y-Achse</dt>
-    <dd class="col-xl-9">Altersgruppen (Einteilung vorgegeben durch den Datenbestand des Robert-Koch-Institus) und Gesamtbevölkerung</dd>
-    <dt class="col-xl-3">Farbschema</dt>
-    <dd class="col-xl-9">7-Tage-Inzidenzwerte (gemeldete COVID-19-Fälle pro 100.000 Personen in der Altersgruppe). Tage ohne Daten werden in der Kategorie „>0–5“ dargestellt.</dd>`;
+    element.innerHTML = `<dt class="col-xl-3">Farbschema</dt><dd class="col-xl-9">7-Tage-Inzidenzwerte (gemeldete COVID-19-Fälle pro 100.000 Personen in der Altersgruppe). Tage ohne Daten werden in der Kategorie „>0–5“ dargestellt.</dd>`;
     document.getElementById("legendContainer").appendChild(element);
 
     const ul = document.createElement("ul");
@@ -374,6 +364,11 @@
       ul.appendChild(li);
     });
     document.getElementById("legendContainer").appendChild(ul);
+
+    element = document.createElement("dl");
+    element.setAttribute("class", "row text-muted");
+    element.innerHTML = `<dt class="col-xl-3">X-Achse</dt><dd class="col-xl-9">zeitlicher Verlauf</dd><dt class="col-xl-3">Y-Achse</dt><dd class="col-xl-9">Altersgruppen (Einteilung vorgegeben durch den Datenbestand des Robert-Koch-Institus) und Gesamtbevölkerung</dd>`;
+    document.getElementById("legendContainer").appendChild(element);
 
     const paragraph = document.createElement("p");
     paragraph.setAttribute("class", "text-muted");
