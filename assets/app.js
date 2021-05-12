@@ -209,7 +209,9 @@
         {
           label: "",
           data: [],
-          borderWidth: 0,
+          borderWidth: function(ctx) {
+            return 0;
+          },
           backgroundColor: function(ctx) {
             let colorScheme = selectedColorScheme || "DEFAULT";
             let value = ctx.dataset.data[ctx.dataIndex].v;
