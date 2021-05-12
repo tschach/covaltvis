@@ -209,7 +209,11 @@
         {
           label: "",
           data: [],
+          borderColor: "#000",
           borderWidth: function(ctx) {
+            if (ctx.raw.y === "total") {
+              return { top: 4, left: 0, right: 0, bottom: 0 };
+            }
             return 0;
           },
           backgroundColor: function(ctx) {
