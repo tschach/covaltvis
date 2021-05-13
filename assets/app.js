@@ -358,6 +358,12 @@
   function updateLegend(landkreisId) {
     document.getElementById("legendContainer").replaceChildren();
 
+    let paragraph = document.createElement("p");
+    paragraph.setAttribute("class", "text-muted small");
+    paragraph.innerText =
+      "Maus über / Finger auf eine Kachel zeigt den Inzidenzwert, die neuen Fälle für diesen Tag und die neuen Fälle der letzten 7 Tage an. Die Zahlen können von denen anderer Quellen abweichen.";
+    document.getElementById("legendContainer").appendChild(paragraph);
+
     let element = document.createElement("dl");
     element.setAttribute("class", "row text-muted");
     element.innerHTML = `<dt class="col-xl-3">Farbschema</dt><dd class="col-xl-9">gemeldete COVID-19-Fälle der letzten 7 Tage pro 100.000 Personen in der Altersgruppe (Inzidenz). Tage ohne Daten werden in der Kategorie „>0–5“ dargestellt.</dd>`;
@@ -381,7 +387,7 @@
     element.innerHTML = `<dt class="col-xl-3">X-Achse</dt><dd class="col-xl-9">zeitlicher Verlauf</dd><dt class="col-xl-3">Y-Achse</dt><dd class="col-xl-9">Altersgruppen (Einteilung vorgegeben durch den Datenbestand des Robert-Koch-Institus) und Gesamtbevölkerung</dd>`;
     document.getElementById("legendContainer").appendChild(element);
 
-    const paragraph = document.createElement("p");
+    paragraph = document.createElement("p");
     paragraph.setAttribute("class", "text-muted");
     const link = document.createElement("a");
     link.setAttribute("href", `https://github.com/tschach/covaltvis/blob/main/data/${landkreisId}.json`);
@@ -491,11 +497,6 @@
             titleElement.setAttribute("class", "offset-xl-1 col-xl-10 lead");
             titleElement.innerText = textLabels.matrixChartTitle(landkreise[landkreisId].name, formatDate(new Date(lastDate)));
             document.getElementById("titleContainer").replaceChildren(titleElement);
-            const paragraph = document.createElement("p");
-            paragraph.setAttribute("class", "offset-xl-1 col-xl-10 text-muted small");
-            paragraph.innerText =
-              "Maus über / Finger auf eine Kachel zeigt den Inzidenzwert, die neuen Fälle für diesen Tag und die neuen Fälle der letzten 7 Tage an. Die Zahlen können von denen anderen Quellen abweichen.";
-            document.getElementById("titleContainer").appendChild(paragraph);
 
             var ctx = document.getElementById(canvasId).getContext("2d");
 
