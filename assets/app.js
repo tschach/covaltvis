@@ -265,7 +265,12 @@
             },
             label(ctx) {
               const v = ctx.dataset.data[ctx.dataIndex];
-              return [`${formatDate(v.x)}: ${v.v.toString().replace(".", ",")}`];
+              return [
+                `${formatDate(v.x)}`,
+                `Inzidenz: ${v.v.toString().replace(".", ",")}`,
+                `Tag abs.: ${v.d.toString().replace(".", ",")}`,
+                `7 Tage abs.: ${v.w.toString().replace(".", ",")}`
+              ];
             }
           }
         },
@@ -355,7 +360,7 @@
 
     let element = document.createElement("dl");
     element.setAttribute("class", "row text-muted");
-    element.innerHTML = `<dt class="col-xl-3">Farbschema</dt><dd class="col-xl-9">7-Tage-Inzidenzwerte (gemeldete COVID-19-Fälle pro 100.000 Personen in der Altersgruppe). Tage ohne Daten werden in der Kategorie „>0–5“ dargestellt.</dd>`;
+    element.innerHTML = `<dt class="col-xl-3">Farbschema</dt><dd class="col-xl-9">gemeldete COVID-19-Fälle der letzten 7 Tage pro 100.000 Personen in der Altersgruppe (Inzidenz). Tage ohne Daten werden in der Kategorie „>0–5“ dargestellt.</dd>`;
     document.getElementById("legendContainer").appendChild(element);
 
     const ul = document.createElement("ul");
@@ -465,7 +470,15 @@
                   if (value.hasOwnProperty(`${ageGroup}_7day_cases_per_100k`)) {
                     cases = value[`${ageGroup}_7day_cases_per_100k`];
                   }
-                  dataset.push({ x: key, y: ageGroup, v: cases });
+                  let dailyCases = "-";
+                  if (value.hasOwnProperty(`${ageGroup}_cases`)) {
+                    dailyCases = value[`${ageGroup}_cases`];
+                  }
+                  let weeklyCases = "-";
+                  if (value.hasOwnProperty(`${ageGroup}_7day_cases`)) {
+                    weeklyCases = value[`${ageGroup}_7day_cases`];
+                  }
+                  dataset.push({ x: key, y: ageGroup, v: cases, d: dailyCases, w: weeklyCases });
                 }
                 lastDate = key;
               });
@@ -478,6 +491,11 @@
             titleElement.setAttribute("class", "offset-xl-1 col-xl-10 lead");
             titleElement.innerText = textLabels.matrixChartTitle(landkreise[landkreisId].name, formatDate(new Date(lastDate)));
             document.getElementById("titleContainer").replaceChildren(titleElement);
+            const paragraph = document.createElement("p");
+            paragraph.setAttribute("class", "offset-xl-1 col-xl-10 text-muted small");
+            paragraph.innerText =
+              "Maus über / Finger auf eine Kachel zeigt den Inzidenzwert, die neuen Fälle für diesen Tag und die neuen Fälle der letzten 7 Tage an. Die Zahlen können von denen anderen Quellen abweichen.";
+            document.getElementById("titleContainer").appendChild(paragraph);
 
             var ctx = document.getElementById(canvasId).getContext("2d");
 
