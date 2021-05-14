@@ -83,6 +83,71 @@
         }
       ]
     },
+    PURPLEYELLOW: {
+      label: "Lila-Grün-Gelb",
+      ranges: [
+        {
+          min: 0,
+          max: 5,
+          color: "#441155"
+        },
+        {
+          min: 5,
+          max: 10,
+          color: "#341264"
+        },
+        {
+          min: 10,
+          max: 15,
+          color: "#1a1374"
+        },
+        {
+          min: 15,
+          max: 20,
+          color: "#133283"
+        },
+        {
+          min: 20,
+          max: 35,
+          color: "#136193"
+        },
+        {
+          min: 35,
+          max: 50,
+          color: "#129ca2"
+        },
+        {
+          min: 50,
+          max: 100,
+          color: "#10b282"
+        },
+        {
+          min: 100,
+          max: 150,
+          color: "#0ec14f"
+        },
+        {
+          min: 150,
+          max: 200,
+          color: "#0bd110"
+        },
+        {
+          min: 200,
+          max: 300,
+          color: "#4de008"
+        },
+        {
+          min: 300,
+          max: 600,
+          color: "#9ff004"
+        },
+        {
+          min: 600,
+          max: Infinity,
+          color: "#ffff00"
+        }
+      ]
+    },
     TEAL: {
       label: "Farbschema Türkis",
       ranges: [
@@ -504,7 +569,7 @@
 
             updateLegend(landkreisId);
 
-            document.getElementById("resultsContainer").scrollIntoView(true);
+            document.getElementById("controlContainer").scrollIntoView(true);
           }
         })
         .catch(function(error) {
