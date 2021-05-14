@@ -431,7 +431,7 @@
 
     let element = document.createElement("dl");
     element.setAttribute("class", "row text-muted");
-    element.innerHTML = `<dt class="col-xl-3">Farbschema</dt><dd class="col-xl-9">gemeldete COVID-19-Fälle der letzten 7 Tage pro 100.000 Personen in der Altersgruppe (Inzidenz). Tage ohne Daten werden in der Kategorie „>0–5“ dargestellt.</dd>`;
+    element.innerHTML = `<dt class="col-xl-3">Farbschema</dt><dd class="col-xl-9">gemeldete COVID-19-Fälle der letzten 7 Tage pro 100.000 Personen in der Altersgruppe (Inzidenz). Tage ohne Daten werden in der Kategorie „0–5“ dargestellt.</dd>`;
     document.getElementById("legendContainer").appendChild(element);
 
     const ul = document.createElement("ul");
@@ -440,7 +440,7 @@
     colorSchemes[selectedColorScheme].ranges.forEach(range => {
       const li = document.createElement("li");
       li.setAttribute("class", "list-inline-item col-lg-2 col-md-3 col-sm-4 col-6");
-      let legendString = `>&#8201;${range.min}&#8239;&#8211;&#8201;${isFinite(range.max) ? range.max : ""}`;
+      let legendString = `${range.min === 0 ? "" : ">"}&#8201;${range.min}${isFinite(range.max) ? "&#8239;&#8211;&#8201;" + range.max : ""}`;
 
       li.innerHTML = `<span style="background-color:${range.color};height:16px;width:16px;margin-right:8px;display:inline-block"></span><span style="vertical-align:text-bottom">${legendString}</span>`;
       ul.appendChild(li);
