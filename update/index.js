@@ -7,8 +7,11 @@ let rkiQueryString = (landkreisId, fromDate) =>
 
 const queryString = rkiQueryString("8416", "2021-05-01");
 
+console.log(queryString);
+
 axios.get(queryString).then(rkiResponse => {
   if (rkiResponse && rkiResponse.data && rkiResponse.data.features && rkiResponse.data.features.length > 0) {
+    console.log(rkiResponse.data.features[0]);
     fs.writeFileSync(`${pathToData}automatedUpdate_08416.json`, JSON.stringify(rkiResponse.data.features));
   }
 });
