@@ -5,7 +5,7 @@ jobs:
     runs-on: ubuntu-latest
     defaults:
       run:
-        working-directory: ./update
+        working-directory: update
     steps:
       - uses: actions/checkout@master
       - uses: actions/setup-node@v2
@@ -13,6 +13,7 @@ jobs:
           node-version: "8"
       - run: npm ci
       - run: npm update
+      - run: npm test
       - uses: EndBug/add-and-commit@v7
         with:
           add: "data/*"
