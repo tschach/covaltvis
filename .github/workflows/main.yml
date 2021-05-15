@@ -2,7 +2,7 @@ name: Merge push to main into gh-pages
 on:
   push:
     branches:
-      - 'main/*'
+      - main
 jobs:
   merge-branch:
     runs-on: ubuntu-latest
