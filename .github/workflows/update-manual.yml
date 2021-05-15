@@ -12,8 +12,7 @@ jobs:
         with:
           node-version: "8"
       - run: npm ci
-      - run: npm update
-      - run: npm test
+      - run: npm run update
       - uses: EndBug/add-and-commit@v7
         with:
           add: "data/*"
