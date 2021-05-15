@@ -1,0 +1,17 @@
+name: Merge push to main into gh-pages
+on:
+  push:
+    branches:
+      - 'main/*'
+jobs:
+  merge-branch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
+
+      - name: Merge main > gh-pages
+        uses: devmasx/merge-branch@v1.3.1
+        with:
+          type: now
+          target_branch: gh-pages
+          github_token: ${{ github.token }}
