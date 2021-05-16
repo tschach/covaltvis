@@ -2,7 +2,7 @@ const fs = require("fs");
 const axios = require("axios");
 
 const dataFromScratch = false;
-const pollInterval = 1000 * 10;
+const pollInterval = 1000 * 5;
 
 const pathToData = "../data/";
 
