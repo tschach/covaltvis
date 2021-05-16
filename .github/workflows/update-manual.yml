@@ -18,6 +18,9 @@ jobs:
           add: "data/*"
           default_author: github_actor
           message: "Manual update of data"
+  merge:
+    runs-on: ubuntu-latest
+    steps:
       - uses: devmasx/merge-branch@v1.3.1
         with:
           type: now
