@@ -20,6 +20,7 @@ const populations = JSON.parse(fs.readFileSync(`${pathToData}populations.json`))
 const landkreise = JSON.parse(fs.readFileSync(`${pathToData}landkreise.json`));
 
 let index = 0;
+let counter = 1;
 let updateExistingDatasets = {};
 
 for (const [key, value] of Object.entries(landkreise)) {
@@ -51,138 +52,129 @@ for (const [key, value] of Object.entries(landkreise)) {
       queryString = rkiQueryString(ags, queryFromDate);
     }
 
-    setTimeout(
-      () => {
-        console.log(queryString);
-        axios.get(queryString).then(rkiResponse => {
-          let byDay = {};
-          if (updateExistingDatasets[agsPadded] === true) {
-            byDay = JSON.parse(fs.readFileSync(`${pathToData}${agsPadded}.json`));
-          }
+    setTimeout(() => {
+      axios.get(queryString).then(rkiResponse => {
+        let byDay = {};
+        if (updateExistingDatasets[agsPadded] === true) {
+          byDay = JSON.parse(fs.readFileSync(`${pathToData}${agsPadded}.json`));
+        }
 
-          if (rkiResponse && rkiResponse.data && rkiResponse.data.features && rkiResponse.data.features.length > 0) {
-            let firstDate = new Date(rkiResponse.data.features[0].attributes.MeldeDatum);
-            let lastDate = new Date(rkiResponse.data.features[rkiResponse.data.features.length - 1].attributes.MeldeDatum);
+        if (rkiResponse && rkiResponse.data && rkiResponse.data.features && rkiResponse.data.features.length > 0) {
+          let firstDate = new Date(rkiResponse.data.features[0].attributes.MeldeDatum);
+          let lastDate = new Date(rkiResponse.data.features[rkiResponse.data.features.length - 1].attributes.MeldeDatum);
 
-            for (let currentDate = firstDate; currentDate <= lastDate; currentDate.setDate(currentDate.getDate() + 1)) {
-              byDay[formatDate(currentDate)] = {};
+          for (let currentDate = firstDate; currentDate <= lastDate; currentDate.setDate(currentDate.getDate() + 1)) {
+            byDay[formatDate(currentDate)] = {};
 
+            if (agsPadded === "11000") {
+              byDay[formatDate(currentDate)][`total_cases`] = 0;
+              byDay[formatDate(currentDate)][`total_7day_cases`] = 0;
+
+              berlinDistricts.forEach(berlinDistrict => {
+                let dateCases = rkiResponse.data.features.filter(feature => {
+                  return formatDate(new Date(feature.attributes.MeldeDatum)) === formatDate(currentDate) && feature.attributes.IdLandkreis === berlinDistrict;
+                });
+
+                if (dateCases) {
+                  let unknownCases = dateCases.find(dateCase => {
+                    return dateCase.attributes.Altersgruppe === "unbekannt";
+                  });
+                  if (unknownCases) {
+                    byDay[formatDate(currentDate)][`total_cases`] += unknownCases.attributes.cases;
+                    byDay[formatDate(currentDate)][`unbekannt_cases`] = unknownCases.attributes.cases;
+                  }
+                }
+              });
+            } else {
+              byDay[formatDate(currentDate)][`total_cases`] = 0;
+              byDay[formatDate(currentDate)][`total_7day_cases`] = 0;
+
+              let dateCases = rkiResponse.data.features.filter(feature => {
+                return formatDate(new Date(feature.attributes.MeldeDatum)) === formatDate(currentDate);
+              });
+              if (dateCases) {
+                let unknownCases = dateCases.find(dateCase => {
+                  return dateCase.attributes.Altersgruppe === "unbekannt";
+                });
+
+                if (unknownCases) {
+                  byDay[formatDate(currentDate)][`total_cases`] += unknownCases.attributes.cases;
+                  byDay[formatDate(currentDate)][`unbekannt_cases`] = unknownCases.attributes.cases;
+                }
+              }
+            }
+
+            let sumOfLastSevenDayUnknownCases = sumOfLastSevenDayCasesByAgeGroup(currentDate, "unbekannt", byDay);
+
+            if (sumOfLastSevenDayUnknownCases) {
+              byDay[formatDate(currentDate)][`total_7day_cases`] += sumOfLastSevenDayUnknownCases;
+            }
+
+            ageGroups.forEach(ageGroup => {
+              let cases = 0;
               if (agsPadded === "11000") {
-                byDay[formatDate(currentDate)][`total_cases`] = 0;
-                byDay[formatDate(currentDate)][`total_7day_cases`] = 0;
-
                 berlinDistricts.forEach(berlinDistrict => {
                   let dateCases = rkiResponse.data.features.filter(feature => {
                     return formatDate(new Date(feature.attributes.MeldeDatum)) === formatDate(currentDate) && feature.attributes.IdLandkreis === berlinDistrict;
                   });
 
                   if (dateCases) {
-                    let unknownCases = dateCases.find(dateCase => {
-                      return dateCase.attributes.Altersgruppe === "unbekannt";
+                    let ageGroupCases = dateCases.find(dateCase => {
+                      return dateCase.attributes.Altersgruppe === ageGroup && dateCase.attributes.IdLandkreis === berlinDistrict;
                     });
-                    if (unknownCases) {
-                      byDay[formatDate(currentDate)][`total_cases`] += unknownCases.attributes.cases;
-                      byDay[formatDate(currentDate)][`unbekannt_cases`] = unknownCases.attributes.cases;
+
+                    if (ageGroupCases) {
+                      cases += ageGroupCases.attributes.cases;
                     }
                   }
                 });
               } else {
-                byDay[formatDate(currentDate)][`total_cases`] = 0;
-                byDay[formatDate(currentDate)][`total_7day_cases`] = 0;
-
                 let dateCases = rkiResponse.data.features.filter(feature => {
                   return formatDate(new Date(feature.attributes.MeldeDatum)) === formatDate(currentDate);
                 });
-                if (dateCases) {
-                  let unknownCases = dateCases.find(dateCase => {
-                    return dateCase.attributes.Altersgruppe === "unbekannt";
-                  });
 
-                  if (unknownCases) {
-                    byDay[formatDate(currentDate)][`total_cases`] += unknownCases.attributes.cases;
-                    byDay[formatDate(currentDate)][`unbekannt_cases`] = unknownCases.attributes.cases;
-                  }
+                let ageGroupCases = dateCases.find(dateCase => {
+                  return dateCase.attributes.Altersgruppe === ageGroup;
+                });
+
+                if (ageGroupCases) {
+                  cases = ageGroupCases.attributes.cases;
                 }
               }
 
-              let sumOfLastSevenDayUnknownCases = sumOfLastSevenDayCasesByAgeGroup(currentDate, "unbekannt", byDay);
+              byDay[formatDate(currentDate)][`${ageGroup}_cases`] = cases;
+              byDay[formatDate(currentDate)][`total_cases`] += cases;
 
-              if (sumOfLastSevenDayUnknownCases) {
-                byDay[formatDate(currentDate)][`total_7day_cases`] += sumOfLastSevenDayUnknownCases;
-              }
+              let inhabitantsByAge = district[ageGroup];
 
-              ageGroups.forEach(ageGroup => {
-                let cases = 0;
-                if (agsPadded === "11000") {
-                  berlinDistricts.forEach(berlinDistrict => {
-                    let dateCases = rkiResponse.data.features.filter(feature => {
-                      return (
-                        formatDate(new Date(feature.attributes.MeldeDatum)) === formatDate(currentDate) && feature.attributes.IdLandkreis === berlinDistrict
-                      );
-                    });
+              byDay[formatDate(currentDate)][`${ageGroup}_cases_per_100k`] = parseFloat(((cases * 100000) / inhabitantsByAge).toFixed(2));
 
-                    if (dateCases) {
-                      let ageGroupCases = dateCases.find(dateCase => {
-                        return dateCase.attributes.Altersgruppe === ageGroup && dateCase.attributes.IdLandkreis === berlinDistrict;
-                      });
+              let sumOfLastSevenDayCases = sumOfLastSevenDayCasesByAgeGroup(currentDate, ageGroup, byDay);
 
-                      if (ageGroupCases) {
-                        cases += ageGroupCases.attributes.cases;
-                      }
-                    }
-                  });
-                } else {
-                  let dateCases = rkiResponse.data.features.filter(feature => {
-                    return formatDate(new Date(feature.attributes.MeldeDatum)) === formatDate(currentDate);
-                  });
+              byDay[formatDate(currentDate)][`${ageGroup}_7day_cases`] = sumOfLastSevenDayCases;
 
-                  let ageGroupCases = dateCases.find(dateCase => {
-                    return dateCase.attributes.Altersgruppe === ageGroup;
-                  });
+              byDay[formatDate(currentDate)][`total_7day_cases`] += sumOfLastSevenDayCases;
 
-                  if (ageGroupCases) {
-                    cases = ageGroupCases.attributes.cases;
-                  }
-                }
+              byDay[formatDate(currentDate)][`${ageGroup}_7day_cases_per_100k`] = parseFloat(((sumOfLastSevenDayCases * 100000) / inhabitantsByAge).toFixed(2));
+            });
 
-                byDay[formatDate(currentDate)][`${ageGroup}_cases`] = cases;
-                byDay[formatDate(currentDate)][`total_cases`] += cases;
+            let inhabitantsTotal = district["TOTAL"];
 
-                let inhabitantsByAge = district[ageGroup];
+            byDay[formatDate(currentDate)][`total_cases_per_100k`] = parseFloat(
+              ((byDay[formatDate(currentDate)][`total_cases`] * 100000) / inhabitantsTotal).toFixed(2)
+            );
 
-                byDay[formatDate(currentDate)][`${ageGroup}_cases_per_100k`] = parseFloat(((cases * 100000) / inhabitantsByAge).toFixed(2));
-
-                let sumOfLastSevenDayCases = sumOfLastSevenDayCasesByAgeGroup(currentDate, ageGroup, byDay);
-
-                byDay[formatDate(currentDate)][`${ageGroup}_7day_cases`] = sumOfLastSevenDayCases;
-
-                byDay[formatDate(currentDate)][`total_7day_cases`] += sumOfLastSevenDayCases;
-
-                byDay[formatDate(currentDate)][`${ageGroup}_7day_cases_per_100k`] = parseFloat(
-                  ((sumOfLastSevenDayCases * 100000) / inhabitantsByAge).toFixed(2)
-                );
-              });
-
-              let inhabitantsTotal = district["TOTAL"];
-
-              byDay[formatDate(currentDate)][`total_cases_per_100k`] = parseFloat(
-                ((byDay[formatDate(currentDate)][`total_cases`] * 100000) / inhabitantsTotal).toFixed(2)
-              );
-
-              byDay[formatDate(currentDate)][`total_7day_cases_per_100k`] = parseFloat(
-                ((byDay[formatDate(currentDate)][`total_7day_cases`] * 100000) / inhabitantsTotal).toFixed(2)
-              );
-            }
-
-            console.log(agsPadded);
-
-            fs.writeFileSync(`${pathToData}${agsPadded}.json`, JSON.stringify(byDay));
+            byDay[formatDate(currentDate)][`total_7day_cases_per_100k`] = parseFloat(
+              ((byDay[formatDate(currentDate)][`total_7day_cases`] * 100000) / inhabitantsTotal).toFixed(2)
+            );
           }
-        });
-      },
-      pollInterval * index++,
-      agsPadded
-    );
+
+          console.log(`${counter++}: ${value.name} (${agsPadded})`);
+
+          fs.writeFileSync(`${pathToData}${agsPadded}.json`, JSON.stringify(byDay));
+        }
+      });
+    }, pollInterval * index++);
   }
 }
 
