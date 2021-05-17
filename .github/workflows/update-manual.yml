@@ -1,4 +1,4 @@
-name: Manual update of data
+name: Data update
 'on': 
   workflow_dispatch:
   schedule:
@@ -20,4 +20,4 @@ jobs:
         with:
           add: "data/*"
           default_author: github_actor
-          message: "Manual update of data"
+          message: "Data update"
