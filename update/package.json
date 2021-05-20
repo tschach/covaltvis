@@ -4,13 +4,13 @@
   "description": "Update the CovAltVis data",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "update": "node index.js"
+    "update": "node index.js",
+    "setdate": "node setdate.js"
   },
   "author": "Tobias Schächtelin",
-  "license": "ISC",
   "dependencies": {
     "axios": "0.21.1",
-    "moment": "2.29.1"
+    "cheerio": "^1.0.0-rc.9",
+    "dayjs": "^1.10.4"
   }
 }

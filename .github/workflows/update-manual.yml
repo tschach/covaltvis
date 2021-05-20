@@ -1,5 +1,5 @@
 name: Data update
-'on': 
+"on":
   workflow_dispatch:
   schedule:
     - cron: "7 2,6,10,14 * * *"
@@ -16,6 +16,7 @@ jobs:
           node-version: "8"
       - run: npm ci
       - run: npm run update
+      - run: npm run setdate
       - uses: EndBug/add-and-commit@v7
         with:
           add: "data/*"
