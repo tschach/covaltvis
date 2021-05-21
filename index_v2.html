@@ -39,7 +39,7 @@
           <dt class="col-xl-3">Datenquellen</dt>
           <dd class="col-xl-9">
             <p class="m-0">
-              COVID-19-Fälle: Robert-Koch-Institut (<a href="https://npgeo-corona-npgeo-de.hub.arcgis.com/">COVID-19 Datenhub</a>; 
+              COVID-19-Fälle: Robert-Koch-Institut (<a href="https://npgeo-corona-npgeo-de.hub.arcgis.com/">COVID-19 Datenhub</a>;
               <a href="https://survstat.rki.de/">SurvStat@RKI 2.0</a> via <a href="https://coronavis.dbvis.de/">Coronavis</a>); Bevölkerungszahlen:
               Statistische Ämter des Bundes und der Länder (<a href="https://www.regionalstatistik.de/link/statistikInfo/12411">Regionaldatenbank Deutschland</a>)
             </p>
@@ -62,17 +62,23 @@
           <div class="col-lg-6">
             <input type="radio" class="btn-check" name="heatmapversion" id="btnradio92" value="v1" checked="">
             <label class="btn btn-sm btn-outline-secondary w-100 h-100 text-start" for="btnradio92">
-                <span>👍</span> tagesaktuelle Inzidenzwerte<br>
-                <span>👎</span> grobe Altersgruppen für Kinder und Schüler*innen</label>
-            
+              Variante 1 (wie bisher):<br>
+              • tagesaktuelle Inzidenzwerte 👍<br>
+              • grobe Einteilung der Altersgruppen<br>
+              • Zeitraum auswählbar
+            </label>
+
           </div>
           <div class="col-lg-6">
-              <input type="radio" class="btn-check" name="heatmapversion" id="btnradio91" value="v2">
-              <label class="btn btn-sm btn-outline-secondary w-100 h-100 text-start" for="btnradio91">
-                <span>👍</span> detaillierte Altersgruppen für Kinder und Schüler*innen<br>
-                <span>👎</span> wöchentliche Inzidenzwerte</label>
-            </div>
+            <input type="radio" class="btn-check" name="heatmapversion" id="btnradio91" value="v2">
+            <label class="btn btn-sm btn-outline-secondary w-100 h-100 text-start" for="btnradio91">
+              Variante 2 (neu):<br>
+              • wöchentliche Inzidenzwerte<br>
+              • detaillierte Altersgruppen für Kinder und Schüler*innen 👍<br>
+              • kein Zeitraum auswählbar
+            </label>
           </div>
+        </div>
         <div class="row pt-xl-4 pt-2 was-validated">
           <div class="col-lg-4">
             <label for="landkreisSelect" class="form-label">Kreis oder Stadt</label>
@@ -140,12 +146,12 @@
       </section>
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.2.1/dist/chart.min.js" integrity="sha256-uVEHWRIr846/vAdLJeybWxjPNStREzOlqLMXjW/Saeo=" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/moment@2.29.1/min/moment-with-locales.min.js" integrity="sha256-E3Snwx6F4t7DiA/L3DgPk6In2M1747JSau+3PWjtS5I=" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-moment@1.0.0/dist/chartjs-adapter-moment.min.js" integrity="sha256-sFB24K2xU2EOgWAtb3ySAGjhMqcUvUJGmwjDcTQa04k=" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chartjs-chart-matrix@1.0.0/dist/chartjs-chart-matrix.min.js" integrity="sha256-w43uLVw/A/TkKTDQhKagsrexz+DmO/ziqAOor+PhW+Y=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.2.1/dist/chart.min.js" integrity="sha256-uVEHWRIr846/vAdLJeybWxjPNStREzOlqLMXjW/Saeo="crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/moment@2.29.1/min/moment-with-locales.min.js" integrity="sha256-E3Snwx6F4t7DiA/L3DgPk6In2M1747JSau+3PWjtS5I="crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-moment@1.0.0/dist/chartjs-adapter-moment.min.js" integrity="sha256-sFB24K2xU2EOgWAtb3ySAGjhMqcUvUJGmwjDcTQa04k="crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-chart-matrix@1.0.0/dist/chartjs-chart-matrix.min.js" integrity="sha256-w43uLVw/A/TkKTDQhKagsrexz+DmO/ziqAOor+PhW+Y="crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="assets/app.min.js"></script>
 
-  
-</body></html>
+
+  </body></html>

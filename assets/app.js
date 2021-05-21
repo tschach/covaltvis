@@ -18,25 +18,19 @@
   const ageGroups = ["total", "A00-A04", "A05-A14", "A15-A34", "A35-A59", "A60-A79", "A80+"];
   const ageGroupsV2Fein = [
     "total",
-    "A00-02",
-    "A03-05",
+    "A00-05",
     "A06-09",
-    "A10-12",
-    "A13-15",
-    "A16-19",
+    "A10-14",
+    "A15-19",
     "A20-29",
-    "A30-39",
-    "A40-49",
-    "A50-59",
-    "A60-69",
-    "A70-79",
-    "A80+"
+    "A30-44",
+    "A45-59",
+    "A60-74",
+    "A75+"
   ];
-  const ageGroupsV2Grob = ["total", "A00-04", "A05-14", "A15-34", "A35-59", "A60-79", "A80+"];
 
   const ageGroupsLabels = ["Alle", "0–4", "5—14", "15—34", "35—59", "60—79", "80+"];
-  const ageGroupsLabelsV2Fein = ["Alle", "0–2", "3—5", "6—9", "10—12", "13—15", "16–19", "20—29", "30—39", "40—49", "50—59", "60–69", "70—79", "80+"];
-  const ageGroupsLabelsV2Grob = ["Alle", "0–4", "5—14", "15—34", "35—59", "60—79", "80+"];
+  const ageGroupsLabelsV2Fein = ["Alle", "0–5", "6—9", "10—14", "15–19", "20—29", "30—44", "45—59", "60—74", "75+"];
 
   const ageGroupsV2 = ageGroupsV2Fein;
   const ageGroupsLabelsV2 = ageGroupsLabelsV2Fein;
