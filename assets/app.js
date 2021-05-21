@@ -376,7 +376,7 @@
           },
           ticks: {
             font: {
-              size: 14,
+              size: 12,
               family: "Monospace"
             },
             color: "#333",
@@ -394,9 +394,19 @@
             display: false
           }
         },
-        y: {
+        "y-1": {
+          display: true,
           type: "category",
           position: "left",
+          title: {
+            color: "#333",
+            display: true,
+            text: "Alter in Jahren",
+            font: {
+              size: 14,
+              family: "Monospace"
+            }
+          },
           offset: true,
           labels: ageGroups,
           ticks: {
@@ -405,11 +415,39 @@
               return ageGroupsLabels[value];
             },
             font: {
-              size: 14,
+              size: 12,
               family: "Monospace"
             },
             color: "#333",
-            padding: 7.5,
+            padding: 5,
+            autoSkip: false
+          },
+          grid: {
+            display: false,
+            drawBorder: false,
+            tickMarkLength: 0
+          },
+          gridLines: {
+            display: false
+          }
+        },
+        "y-2": {
+          display: true,
+          type: "category",
+          position: "right",
+          offset: true,
+          labels: ageGroups,
+          ticks: {
+            display: true,
+            callback: function (value, index, values) {
+              return ageGroupsLabels[value];
+            },
+            font: {
+              size: 12,
+              family: "Monospace"
+            },
+            color: "#333",
+            padding: 5,
             autoSkip: false
           },
           grid: {
@@ -654,16 +692,15 @@
 
     let paragraph = document.createElement("p");
     paragraph.setAttribute("class", "text-muted small");
-    paragraph.innerText =
-      "Maus über / Finger auf eine Kachel für Details.";
+    paragraph.innerText = "Maus über / Finger auf eine Kachel für Details.";
     document.getElementById("legendContainer").appendChild(paragraph);
 
     let element = document.createElement("dl");
     element.setAttribute("class", "row text-muted");
     if (useV2) {
-      element.innerHTML = `<dt class="col-xl-3">Farbschema</dt><dd class="col-xl-9">gemeldete COVID-19-Fälle in der Kalenderwoche pro 100.000 Personen in der Altersgruppe (Inzidenz).</dd>`;
+      element.innerHTML = `<dt class="col-xl-3">Farbschema</dt><dd class="col-xl-9">gemeldete COVID-19-Fälle in der Kalenderwoche pro 100.000 Personen in der Altersgruppe (7-Tage-Inzidenz). Inzidenzen der aktuellen Kalenderwoche sind niedriger und enthalten Unsicherheiten. Ab Mitte der Woche können Tendenzen sichtbar werden.</dd>`;
     } else {
-      element.innerHTML = `<dt class="col-xl-3">Farbschema</dt><dd class="col-xl-9">gemeldete COVID-19-Fälle der letzten 7 Tage pro 100.000 Personen in der Altersgruppe (Inzidenz). Tage ohne Daten werden in der Kategorie „0–5“ dargestellt.</dd>`;
+      element.innerHTML = `<dt class="col-xl-3">Farbschema</dt><dd class="col-xl-9">gemeldete COVID-19-Fälle der letzten 7 Tage pro 100.000 Personen in der Altersgruppe (7-Tage-Inzidenz). Tage ohne Daten werden in der Kategorie „0–5“ dargestellt.</dd>`;
     }
     document.getElementById("legendContainer").appendChild(element);
 
@@ -682,7 +719,7 @@
 
     element = document.createElement("dl");
     element.setAttribute("class", "row text-muted");
-    element.innerHTML = `<dt class="col-xl-3">X-Achse</dt><dd class="col-xl-9">zeitlicher Verlauf</dd><dt class="col-xl-3">Y-Achse</dt><dd class="col-xl-9">Altersgruppen und Gesamtbevölkerung</dd>`;
+    element.innerHTML = `<dt class="col-xl-3">X-Achse</dt><dd class="col-xl-9">zeitlicher Verlauf</dd><dt class="col-xl-3">Y-Achse</dt><dd class="col-xl-9">Altersgruppen und Gesamtbevölkerung, Stand: 31.12.2019.</dd>`;
     document.getElementById("legendContainer").appendChild(element);
 
     paragraph = document.createElement("p");
@@ -766,7 +803,11 @@
     const canvasId = `matrixChartCanvas${landkreisId}`;
     const canvasElement = document.createElement("canvas");
     canvasElement.setAttribute("id", canvasId);
-    canvasElement.setAttribute("style", "width:100%;height:40vw;max-height:450px;min-height:300px;");
+    if (useV2) {
+      canvasElement.setAttribute("style", "width:100%;height:40vw;max-height:450px;min-height:300px;");
+    } else {
+      canvasElement.setAttribute("style", "width:100%;height:33vw;max-height:400px;min-height:250px;");
+    }
     document.getElementById("canvasContainer").appendChild(canvasElement);
     return canvasId;
   }
@@ -832,7 +873,7 @@
 
               updateLegend(landkreisId);
 
-              document.getElementById("controlContainer").scrollIntoView(true);
+              document.getElementById("resultsContainer").scrollIntoView(true);
             } else {
               for (const [key, value] of Object.entries(response.data)) {
                 ageGroups.forEach(ageGroup => {
@@ -869,7 +910,7 @@
 
               updateLegend(landkreisId);
 
-              document.getElementById("controlContainer").scrollIntoView(true);
+              document.getElementById("resultsContainer").scrollIntoView(true);
             }
           }
         })

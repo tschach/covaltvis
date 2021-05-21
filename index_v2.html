@@ -57,24 +57,24 @@
       </header>
       <hr class="offset-xl-2 col-xl-8">
       <section class="pt-xl-4 pt-2 offset-xl-1 col-xl-10" id="controlContainer">
-        <label class="form-label">Art der Datenauswertung (beta)</label>
+        <label class="form-label">Art der Datenauswertung</label>
         <div class="row">
           <div class="col-lg-6">
             <input type="radio" class="btn-check" name="heatmapversion" id="btnradio92" value="v1" checked="">
             <label class="btn btn-sm btn-outline-secondary w-100 h-100 text-start" for="btnradio92">
-              Variante 1 (wie bisher):<br>
+              Variante 1:<br>
               • tagesaktuelle Inzidenzwerte 👍<br>
-              • grobe Einteilung der Altersgruppen<br>
+              • grobe Einteilung der Altersgruppen (nach RKI)<br>
               • Zeitraum auswählbar
             </label>
 
           </div>
-          <div class="col-lg-6">
+          <div class="col-lg-6 pt-lg-0 pt-2">
             <input type="radio" class="btn-check" name="heatmapversion" id="btnradio91" value="v2">
             <label class="btn btn-sm btn-outline-secondary w-100 h-100 text-start" for="btnradio91">
               Variante 2 (neu):<br>
               • wöchentliche Inzidenzwerte<br>
-              • detaillierte Altersgruppen für Kinder und Schüler*innen 👍<br>
+              • detaillierte Altersgruppen für Kinder und Schüler*innen 👍 (eigene Einteilung)<br>
               • kein Zeitraum auswählbar
             </label>
           </div>
@@ -99,29 +99,30 @@
               <label class="btn btn-sm btn-outline-secondary" for="btnradio4">letzte 4 Wochen</label>
             </div>
           </div>
+
           <div class="col-lg-4 pt-lg-0 pt-2">
-            <div class="d-flex h-100 flex-column justify-content-between">
-              <div>
-                <label class="form-label">Farbschema</label>
-                <div class="d-grid gap-1" role="group">
-                  <input type="radio" class="btn-check" name="colorscheme" id="btnradio11" value="DEFAULT" checked="">
-                  <label class="btn btn-sm btn-outline-secondary" for="btnradio11">Standard</label>
-                  <input type="radio" class="btn-check" name="colorscheme" id="btnradio12" value="RKIHEATMAP">
-                  <label class="btn btn-sm btn-outline-secondary" for="btnradio12">RKI-Heatmap</label>
-                  <!--<input type="radio" class="btn-check" name="colorscheme" id="btnradio13" value="PURPLEYELLOW" />
-                  <label class="btn btn-sm btn-outline-secondary" for="btnradio13">Lila-Grün-Gelb</label>-->
-                </div>
-              </div>
-              <div class="pt-lg-0 pt-2">
-                <div class="d-grid gap-1" role="group">
-                  <button id="updateChartsButton" type="button" class="btn btn-sm btn-dark">
-                    Diagramm anzeigen oder aktualisieren
-                  </button>
-                </div>
-              </div>
+            <label class="form-label">Farbschema</label>
+            <div class="d-grid gap-1" role="group">
+              <input type="radio" class="btn-check" name="colorscheme" id="btnradio11" value="DEFAULT" checked="">
+              <label class="btn btn-sm btn-outline-secondary" for="btnradio11">Standard</label>
+              <input type="radio" class="btn-check" name="colorscheme" id="btnradio12" value="RKIHEATMAP">
+              <label class="btn btn-sm btn-outline-secondary" for="btnradio12">RKI-Heatmap</label>
+              <input type="radio" class="btn-check" name="colorscheme" id="btnradio13" value="PURPLEYELLOW" />
+              <label class="btn btn-sm btn-outline-secondary" for="btnradio13">Lila-Grün-Gelb</label>
             </div>
           </div>
         </div>
+
+        <div class="row pt-4">
+          <div class="offset-lg-8 col-lg-4">
+            <div class="d-grid gap-1" role="group">
+              <button id="updateChartsButton" type="button" class="btn btn-sm btn-dark">
+                Diagramm anzeigen oder aktualisieren
+              </button>
+            </div>
+          </div>
+        </div>
+
       </section>
       <hr class="offset-xl-2 col-xl-8">
       <section class="pt-xl-4 pt-2 pb-xl-4 pb-2" id="resultsContainer">

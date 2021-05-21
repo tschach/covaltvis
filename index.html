@@ -39,9 +39,9 @@
           <dt class="col-xl-3">Datenquellen</dt>
           <dd class="col-xl-9">
             <p class="m-0">
-              COVID-19-Fälle: Robert-Koch-Institut (<a href="https://npgeo-corona-npgeo-de.hub.arcgis.com/">COVID-19 Datenhub</a>); Bevölkerungszahlen:
-              Statistisches Bundesamt (Destatis) (<a href="https://www-genesis.destatis.de/genesis/online">Genesis online</a>) (für die RKI-Altersgruppen via
-              <a href="https://github.com/semohr/risikogebiete_deutschland">Risikogebiete Deutschland</a>)
+              COVID-19-Fälle: Robert-Koch-Institut (<a href="https://npgeo-corona-npgeo-de.hub.arcgis.com/">COVID-19 Datenhub</a>;
+              <a href="https://survstat.rki.de/">SurvStat@RKI 2.0</a> via <a href="https://coronavis.dbvis.de/">Coronavis</a>); Bevölkerungszahlen:
+              Statistische Ämter des Bundes und der Länder (<a href="https://www.regionalstatistik.de/link/statistikInfo/12411">Regionaldatenbank Deutschland</a>)
             </p>
           </dd>
           <dt class="col-xl-3">Letzte Aktualisierung</dt>
@@ -57,49 +57,72 @@
       </header>
       <hr class="offset-xl-2 col-xl-8">
       <section class="pt-xl-4 pt-2 offset-xl-1 col-xl-10" id="controlContainer">
+        <label class="form-label">Art der Datenauswertung</label>
         <div class="row">
+          <div class="col-lg-6">
+            <input type="radio" class="btn-check" name="heatmapversion" id="btnradio92" value="v1" checked="">
+            <label class="btn btn-sm btn-outline-secondary w-100 h-100 text-start" for="btnradio92">
+              Variante 1:<br>
+              • tagesaktuelle Inzidenzwerte 👍<br>
+              • grobe Einteilung der Altersgruppen (nach RKI)<br>
+              • Zeitraum auswählbar
+            </label>
+
+          </div>
+          <div class="col-lg-6 pt-lg-0 pt-2">
+            <input type="radio" class="btn-check" name="heatmapversion" id="btnradio91" value="v2">
+            <label class="btn btn-sm btn-outline-secondary w-100 h-100 text-start" for="btnradio91">
+              Variante 2 (neu):<br>
+              • wöchentliche Inzidenzwerte<br>
+              • detaillierte Altersgruppen für Kinder und Schüler*innen 👍 (eigene Einteilung)<br>
+              • kein Zeitraum auswählbar
+            </label>
+          </div>
+        </div>
+        <div class="row pt-xl-4 pt-2 was-validated">
           <div class="col-lg-4">
             <label for="landkreisSelect" class="form-label">Kreis oder Stadt</label>
-            <select id="landkreisSelect" class="form-select" disabled="">
+            <select id="landkreisSelect" class="form-select" disabled="" required="">
               <option value="">Bitte auswählen</option>
             </select>
           </div>
           <div class="col-lg-4 pt-lg-0 pt-2">
             <label class="form-label">Zeitraum</label>
             <div class="d-grid gap-1" role="group">
-              <input type="radio" class="btn-check" name="timeframe" id="btnradio1" autocomplete="off" value="all" checked="">
+              <input type="radio" class="btn-check" name="timeframe" id="btnradio1" value="all" checked="">
               <label class="btn btn-sm btn-outline-secondary" for="btnradio1">Ganze Pandemie</label>
-              <input type="radio" class="btn-check" name="timeframe" id="btnradio2" autocomplete="off" value="oct2020">
+              <input type="radio" class="btn-check" name="timeframe" id="btnradio2" value="oct2020">
               <label class="btn btn-sm btn-outline-secondary" for="btnradio2">seit Oktober 2020</label>
-              <input type="radio" class="btn-check" name="timeframe" id="btnradio3" autocomplete="off" value="jan2021">
+              <input type="radio" class="btn-check" name="timeframe" id="btnradio3" value="jan2021">
               <label class="btn btn-sm btn-outline-secondary" for="btnradio3">seit Januar 2021</label>
-              <input type="radio" class="btn-check" name="timeframe" id="btnradio4" autocomplete="off" value="last28d">
+              <input type="radio" class="btn-check" name="timeframe" id="btnradio4" value="last28d">
               <label class="btn btn-sm btn-outline-secondary" for="btnradio4">letzte 4 Wochen</label>
             </div>
           </div>
+
           <div class="col-lg-4 pt-lg-0 pt-2">
-            <div class="d-flex h-100 flex-column justify-content-between">
-              <div>
-                <label class="form-label">Farbschema</label>
-                <div class="d-grid gap-1" role="group">
-                  <input type="radio" class="btn-check" name="colorscheme" id="btnradio11" autocomplete="off" value="DEFAULT" checked="">
-                  <label class="btn btn-sm btn-outline-secondary" for="btnradio11">Standard</label>
-                  <input type="radio" class="btn-check" name="colorscheme" id="btnradio12" autocomplete="off" value="RKIHEATMAP">
-                  <label class="btn btn-sm btn-outline-secondary" for="btnradio12">RKI-Heatmap</label>
-                  <!--<input type="radio" class="btn-check" name="colorscheme" id="btnradio13" autocomplete="off" value="PURPLEYELLOW" />
-                  <label class="btn btn-sm btn-outline-secondary" for="btnradio13">Lila-Grün-Gelb</label>-->
-                </div>
-              </div>
-              <div class="pt-lg-0 pt-2">
-                <div class="d-grid gap-1" role="group">
-                  <button id="updateChartsButton" type="button" class="btn btn-sm btn-dark">
-                    Diagramm anzeigen oder aktualisieren
-                  </button>
-                </div>
-              </div>
+            <label class="form-label">Farbschema</label>
+            <div class="d-grid gap-1" role="group">
+              <input type="radio" class="btn-check" name="colorscheme" id="btnradio11" value="DEFAULT" checked="">
+              <label class="btn btn-sm btn-outline-secondary" for="btnradio11">Standard</label>
+              <input type="radio" class="btn-check" name="colorscheme" id="btnradio12" value="RKIHEATMAP">
+              <label class="btn btn-sm btn-outline-secondary" for="btnradio12">RKI-Heatmap</label>
+              <input type="radio" class="btn-check" name="colorscheme" id="btnradio13" value="PURPLEYELLOW" />
+              <label class="btn btn-sm btn-outline-secondary" for="btnradio13">Lila-Grün-Gelb</label>
             </div>
           </div>
         </div>
+
+        <div class="row pt-4">
+          <div class="offset-lg-8 col-lg-4">
+            <div class="d-grid gap-1" role="group">
+              <button id="updateChartsButton" type="button" class="btn btn-sm btn-dark">
+                Diagramm anzeigen oder aktualisieren
+              </button>
+            </div>
+          </div>
+        </div>
+
       </section>
       <hr class="offset-xl-2 col-xl-8">
       <section class="pt-xl-4 pt-2 pb-xl-4 pb-2" id="resultsContainer">
@@ -124,13 +147,12 @@
       </section>
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.2.1/dist/chart.min.js" integrity="sha256-uVEHWRIr846/vAdLJeybWxjPNStREzOlqLMXjW/Saeo=" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/moment@2.29.1/min/moment-with-locales.min.js" integrity="sha256-E3Snwx6F4t7DiA/L3DgPk6In2M1747JSau+3PWjtS5I=" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-moment@1.0.0/dist/chartjs-adapter-moment.min.js" integrity="sha256-sFB24K2xU2EOgWAtb3ySAGjhMqcUvUJGmwjDcTQa04k=" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chartjs-chart-matrix@1.0.0/dist/chartjs-chart-matrix.min.js" integrity="sha256-w43uLVw/A/TkKTDQhKagsrexz+DmO/ziqAOor+PhW+Y=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.2.1/dist/chart.min.js" integrity="sha256-uVEHWRIr846/vAdLJeybWxjPNStREzOlqLMXjW/Saeo="crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/moment@2.29.1/min/moment-with-locales.min.js" integrity="sha256-E3Snwx6F4t7DiA/L3DgPk6In2M1747JSau+3PWjtS5I="crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-moment@1.0.0/dist/chartjs-adapter-moment.min.js" integrity="sha256-sFB24K2xU2EOgWAtb3ySAGjhMqcUvUJGmwjDcTQa04k="crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-chart-matrix@1.0.0/dist/chartjs-chart-matrix.min.js" integrity="sha256-w43uLVw/A/TkKTDQhKagsrexz+DmO/ziqAOor+PhW+Y="crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="assets/app.min.js"></script>
-  
 
 
-</body></html>
+  </body></html>
