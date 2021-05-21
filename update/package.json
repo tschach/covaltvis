@@ -5,12 +5,14 @@
   "main": "index.js",
   "scripts": {
     "update": "node index.js",
+    "update_coronavis": "node coronavis.js",
     "setdate": "node setdate.js"
   },
   "author": "Tobias Schächtelin",
   "dependencies": {
     "axios": "0.21.1",
     "cheerio": "^1.0.0-rc.9",
-    "dayjs": "^1.10.4"
+    "dayjs": "1.10.4",
+    "moment": "2.29.1"
   }
 }
