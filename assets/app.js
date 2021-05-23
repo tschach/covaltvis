@@ -36,7 +36,7 @@
   const ageGroupsLabelsV2 = ageGroupsLabelsV2Fein;
 
   const colorSchemes = {
-    DEFAULT: {
+    def: {
       label: "Standard-Farbschema",
       ranges: [
         {
@@ -101,7 +101,7 @@
         }
       ]
     },
-    PURPLEYELLOW: {
+    lgg: {
       label: "Lila-Grün-Gelb",
       ranges: [
         {
@@ -216,7 +216,7 @@
         }
       ]
     },
-    RKIHEATMAP: {
+    rki: {
       label: "RKI-Heatmap",
       ranges: [
         {
@@ -283,7 +283,7 @@
     }
   };
 
-  let selectedColorScheme;
+  let selectedColorScheme, selectedTimeframe;
 
   const matrixChartConfig = {
     type: "matrix",
@@ -645,11 +645,17 @@
 
   function landkreisSelectOnChange(selectObject) {
     selectedLandkreise = [];
-    for (const [key, option] of Object.entries(selectObject.target.options)) {
-      if (option.selected && option.value && option.value.length === 5) {
-        selectedLandkreise.push(option.value);
+
+    if (selectObject) {
+      for (const [key, option] of Object.entries(selectObject.target.options)) {
+        if (option.selected && option.value && option.value.length === 5) {
+          selectedLandkreise.push(option.value);
+        }
       }
+    } else {
+      document.getElementById("landkreisSelect").dispatchEvent(new Event("change"));
     }
+
   }
 
   function colorSchemeSelectOnChange(eventObject) {
@@ -662,6 +668,16 @@
         }
       });
     }
+  }
+
+  function colorschemeSet(id) {
+    document.querySelectorAll("input[name=colorscheme]").forEach(input => {
+      if (input.value === id && !input.disabled) {
+        input.checked = true
+      } else {
+        input.checked = false
+      }
+    });
   }
 
   function heatmapversionStatusOnChange(eventObject) {
@@ -687,15 +703,33 @@
     }
   }
 
+  function heatmapversionSet(id) {
+    document.querySelectorAll("input[name=heatmapversion]").forEach(input => {
+      if (input.value === id && !input.disabled) {
+        input.checked = true
+      } else {
+        input.checked = false
+      }
+    });
+  }
+
   function updateLegend(landkreisId) {
     document.getElementById("legendContainer").replaceChildren();
 
+    let element = document.createElement("div");
+    element.setAttribute("class", "d-flex justify-content-between");
     let paragraph = document.createElement("p");
     paragraph.setAttribute("class", "text-muted small");
     paragraph.innerText = "Maus über / Finger auf eine Kachel für Details.";
-    document.getElementById("legendContainer").appendChild(paragraph);
+    element.appendChild(paragraph);
+    paragraph = document.createElement("p");
+    paragraph.setAttribute("class", "text-muted small");
+    paragraph.innerHTML = `URL für diese Ansicht: <a href="${getCurrentUrl(landkreisId)}">${getCurrentUrl(landkreisId)}</a>`;
+    element.appendChild(paragraph);
+    document.getElementById("legendContainer").appendChild(element);
 
-    let element = document.createElement("dl");
+
+    element = document.createElement("dl");
     element.setAttribute("class", "row text-muted");
     if (useV2) {
       element.innerHTML = `<dt class="col-xl-3">Farbschema</dt><dd class="col-xl-9">gemeldete COVID-19-Fälle in der Kalenderwoche pro 100.000 Personen in der Altersgruppe (7-Tage-Inzidenz). Inzidenzen der aktuellen Kalenderwoche sind niedriger und enthalten Unsicherheiten. Ab Mitte der Woche können Tendenzen sichtbar werden.</dd>`;
@@ -736,11 +770,10 @@
   }
 
   function updateTimeframeRadioOnChange(eventObject) {
-    let timeframe
     if (eventObject) {
-      timeframe = eventObject.target.value;
+      selectedTimeframe = eventObject.target.value;
       let now = new Date();
-      switch (timeframe) {
+      switch (selectedTimeframe) {
         case "oct2020":
           fromDate = "2020-10-01";
           matrixChartConfig.options.scales.x.time.unit = "week";
@@ -770,6 +803,16 @@
         }
       });
     }
+  }
+
+  function timeframeSet(id) {
+    document.querySelectorAll("input[name=timeframe]").forEach(input => {
+      if (input.value === id && !input.disabled) {
+        input.checked = true
+      } else {
+        input.checked = false
+      }
+    });
   }
 
   function updateChartsButtonOnChange() {
@@ -810,6 +853,10 @@
     }
     document.getElementById("canvasContainer").appendChild(canvasElement);
     return canvasId;
+  }
+
+  function getCurrentUrl(ags) {
+    return `https://tschach.github.io/covaltvis/#${ags}/${useV2 ? 'v2' : 'v1'}/${selectedTimeframe}/${selectedColorScheme}`
   }
 
   function updateCharts(fromDate, toDate) {
@@ -942,6 +989,23 @@
   document.addEventListener("DOMContentLoaded", function (event) {
     moment.locale("de-DE");
 
+    let parameters = window.location.hash.substr(1)
+    if (parameters) {
+      parameters = parameters.split("/")
+    }
+
+    if (parameters && parameters[1]) {
+      heatmapversionSet(parameters[1])
+    }
+
+    if (parameters && parameters[2]) {
+      timeframeSet(parameters[2])
+    }
+
+    if (parameters && parameters[3]) {
+      colorschemeSet(parameters[3])
+    }
+
     heatmapversionStatusOnChange()
     colorSchemeSelectOnChange()
     updateTimeframeRadioOnChange()
@@ -963,10 +1027,18 @@
             const optionElement = document.createElement("option");
             optionElement.setAttribute("value", agsPadded);
             optionElement.innerText = `${value.name}`;
+            optionElement.selected = parameters && parameters[0] === agsPadded
             document.getElementById("landkreisSelect").appendChild(optionElement);
           });
 
         document.getElementById("landkreisSelect").disabled = false;
+        landkreisSelectOnChange()
+
+        let x = document.getElementById("landkreisSelect").validity.valid
+        if (x === true) {
+          updateCharts();
+        }
+
         if (devMode === true) {
           selectedLandkreise = [Object.keys(landkreise)[0]];
           updateCharts();
