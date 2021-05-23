@@ -717,7 +717,7 @@
     document.getElementById("legendContainer").replaceChildren();
 
     let element = document.createElement("div");
-    element.setAttribute("class", "d-flex justify-content-between");
+    element.setAttribute("class", "d-xl-flex justify-content-between");
     let paragraph = document.createElement("p");
     paragraph.setAttribute("class", "text-muted small");
     paragraph.innerText = "Maus über / Finger auf eine Kachel für Details.";
