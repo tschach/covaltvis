@@ -61,7 +61,8 @@ for (const [key, value] of Object.entries(landkreise)) {
 
         if (rkiResponse && rkiResponse.data && rkiResponse.data.features && rkiResponse.data.features.length > 0) {
           let firstDate = new Date(rkiResponse.data.features[0].attributes.MeldeDatum);
-          let lastDate = new Date(rkiResponse.data.features[rkiResponse.data.features.length - 1].attributes.MeldeDatum);
+          let lastDate = new Date();
+          lastDate = lastDate.setDate(lastDate.getDate() - 1)
 
           for (let currentDate = firstDate; currentDate <= lastDate; currentDate.setDate(currentDate.getDate() + 1)) {
             byDay[formatDate(currentDate)] = {};
