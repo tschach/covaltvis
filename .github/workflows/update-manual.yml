@@ -1,4 +1,4 @@
-name: Data update
+name: Data update v1
 "on":
   workflow_dispatch:
   schedule:
@@ -21,4 +21,4 @@ jobs:
         with:
           add: "data/* index.html"
           default_author: github_actor
-          message: "Data update"
+          message: "Data update v1"
