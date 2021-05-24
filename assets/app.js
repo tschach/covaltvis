@@ -36,7 +36,7 @@
   const ageGroupsLabelsV2 = ageGroupsLabelsV2Fein;
 
   const colorSchemes = {
-    def: {
+    DEFAULT: {
       label: "Standard-Farbschema",
       ranges: [
         {
@@ -101,7 +101,7 @@
         }
       ]
     },
-    lgg: {
+    PURPLEGREENYELLOW: {
       label: "Lila-Grün-Gelb",
       ranges: [
         {
@@ -216,7 +216,7 @@
         }
       ]
     },
-    rki: {
+    RKIHEATMAP: {
       label: "RKI-Heatmap",
       ranges: [
         {
@@ -671,6 +671,18 @@
   }
 
   function colorschemeSet(id) {
+    switch (id) {
+      case "lgg":
+      case "3":
+        id = 'PURPLEGREENYELLOW'
+        break
+      case "rki":
+      case "2":
+        id = 'RKIHEATMAP'
+        break
+      default:
+        id = 'DEFAULT'
+    }
     document.querySelectorAll("input[name=colorscheme]").forEach(input => {
       if (input.value === id && !input.disabled) {
         input.checked = true
@@ -678,6 +690,17 @@
         input.checked = false
       }
     });
+  }
+
+  function colorschemeGetForUrl() {
+    switch (selectedColorScheme) {
+      case "PURPLEGREENYELLOW":
+        return "3"
+      case "RKIHEATMAP":
+        return "2"
+      default:
+        return "1"
+    }
   }
 
   function heatmapversionStatusOnChange(eventObject) {
@@ -704,6 +727,14 @@
   }
 
   function heatmapversionSet(id) {
+    switch (id) {
+      case "v2":
+      case "2":
+        id = 'v2'
+        break
+      default:
+        id = 'v1'
+    }
     document.querySelectorAll("input[name=heatmapversion]").forEach(input => {
       if (input.value === id && !input.disabled) {
         input.checked = true
@@ -787,11 +818,6 @@
           fromDate = formatDate2(now);
           matrixChartConfig.options.scales.x.time.unit = "day";
           break;
-        case "last14d":
-          now.setDate(now.getDate() - 14);
-          fromDate = formatDate2(now);
-          matrixChartConfig.options.scales.x.time.unit = "day";
-          break;
         default:
           fromDate = null;
           matrixChartConfig.options.scales.x.time.unit = "week";
@@ -806,6 +832,22 @@
   }
 
   function timeframeSet(id) {
+    switch (id) {
+      case "last28d":
+      case "4":
+        id = 'last28d'
+        break
+      case "jan2021":
+      case "3":
+        id = 'jan2021'
+        break
+      case "oct2020":
+      case "2":
+        id = 'oct2020'
+        break
+      default:
+        id = 'all'
+    }
     document.querySelectorAll("input[name=timeframe]").forEach(input => {
       if (input.value === id && !input.disabled) {
         input.checked = true
@@ -814,6 +856,20 @@
       }
     });
   }
+
+  function timeframeGetForUrl() {
+    switch (selectedTimeframe) {
+      case "last28d":
+        return "4"
+      case "jan2021":
+        return "3"
+      case "oct2020":
+        return "2"
+      default:
+        return "1"
+    }
+  }
+
 
   function updateChartsButtonOnChange() {
     updateCharts(fromDate, toDate);
@@ -856,7 +912,10 @@
   }
 
   function getCurrentUrl(ags) {
-    return `https://tschach.github.io/covaltvis/#${ags}/${useV2 ? 'v2' : 'v1'}/${selectedTimeframe}/${selectedColorScheme}`
+    if (devMode === true) {
+      return `http://127.0.0.1:8080/#${ags}/${useV2 ? 'v2' : 'v1'}/${timeframeGetForUrl()}/${colorschemeGetForUrl()}`
+    }
+    return `https://tschach.github.io/covaltvis/#${ags}/${useV2 ? 'v2' : 'v1'}/${timeframeGetForUrl()}/${colorschemeGetForUrl()}`
   }
 
   function updateCharts(fromDate, toDate) {
@@ -864,8 +923,6 @@
     toDate = toDate || "2050-12-31";
     document.getElementById("canvasContainer").replaceChildren();
     numberOfDays = 0;
-
-
 
     selectedLandkreise.forEach(landkreisId => {
       let canvasId = initMatrixChart(landkreisId);
@@ -1036,10 +1093,10 @@
 
         let x = document.getElementById("landkreisSelect").validity.valid
         if (x === true) {
-          updateCharts();
+          document.getElementById("updateChartsButton").dispatchEvent(new Event("click"));
         }
 
-        if (devMode === true) {
+        if (devMode === true && !parameters[0]) {
           selectedLandkreise = [Object.keys(landkreise)[0]];
           updateCharts();
         }
