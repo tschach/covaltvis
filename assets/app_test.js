@@ -747,7 +747,7 @@
   }
 
   function updateLegend(landkreisId) {
-    document.getElementById("legendContainer").replaceChildren();
+    document.getElementById("legendContainer").innerHTML = ''
 
     let element = document.createElement("div");
     element.setAttribute("class", "d-xl-flex justify-content-between");
@@ -923,7 +923,7 @@
   function updateCharts(fromDate, toDate) {
     fromDate = fromDate || "2020-01-27";
     toDate = toDate || "2050-12-31";
-    document.getElementById("canvasContainer").replaceChildren();
+    document.getElementById("canvasContainer").innerHTML = ''
     numberOfDays = 0;
 
     selectedLandkreise.forEach(landkreisId => {
