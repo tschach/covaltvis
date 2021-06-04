@@ -5,6 +5,8 @@
 
   let useV2;
 
+  let matrixChart;
+
   const textLabels = {
     matrixChartTitle: (x, y) => `${x}: COVID-19 7-Tage-Inzidenzwerte nach Altersgruppen, Stand: ${y}`
   };
@@ -978,7 +980,15 @@
 
               var ctx = document.getElementById(canvasId).getContext("2d");
 
-              var matrixChart = new Chart(ctx, matrixChartConfigV2);
+              try {
+                matrixChart.destroy()
+              }
+              catch (e) {
+
+              }
+              finally {
+                matrixChart = new Chart(ctx, matrixChartConfigV2);
+              }
 
               updateLegend(landkreisId);
 
@@ -1020,7 +1030,15 @@
 
               var ctx = document.getElementById(canvasId).getContext("2d");
 
-              var matrixChart = new Chart(ctx, matrixChartConfig);
+              try {
+                matrixChart.destroy()
+              }
+              catch (e) {
+
+              }
+              finally {
+                matrixChart = new Chart(ctx, matrixChartConfig);
+              }
 
               updateLegend(landkreisId);
 
