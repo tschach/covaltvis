@@ -5,7 +5,7 @@
 
   let useV2;
 
-  let matrixChart;
+  let matrixChart, ctx;
 
   const textLabels = {
     matrixChartTitle: (x, y) => `${x}: COVID-19 7-Tage-Inzidenzwerte nach Altersgruppen, Stand: ${y}`
@@ -928,6 +928,7 @@
 
     selectedLandkreise.forEach(landkreisId => {
       let canvasId = initMatrixChart(landkreisId);
+      ctx = document.getElementById(canvasId).getContext("2d");
 
       getLandkreisData(landkreisId, useV2)
         .then(response => {
@@ -978,8 +979,6 @@
               }
               titleContainer.appendChild(titleElement);
 
-              var ctx = document.getElementById(canvasId).getContext("2d");
-
               try {
                 matrixChart.destroy()
               }
@@ -1027,8 +1026,6 @@
                 child.remove();
               }
               titleContainer.appendChild(titleElement);
-
-              var ctx = document.getElementById(canvasId).getContext("2d");
 
               try {
                 matrixChart.destroy()
