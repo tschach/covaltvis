@@ -745,7 +745,7 @@
   }
 
   function updateLegend(landkreisId) {
-    document.getElementById("legendContainer").replaceChildren();
+    document.getElementById("legendContainer").innerHTML = ''
 
     let element = document.createElement("div");
     element.setAttribute("class", "d-xl-flex justify-content-between");
@@ -921,7 +921,7 @@
   function updateCharts(fromDate, toDate) {
     fromDate = fromDate || "2020-01-27";
     toDate = toDate || "2050-12-31";
-    document.getElementById("canvasContainer").replaceChildren();
+    document.getElementById("canvasContainer").innerHTML = ''
     numberOfDays = 0;
 
     selectedLandkreise.forEach(landkreisId => {
@@ -969,7 +969,12 @@
               const titleElement = document.createElement("h2");
               titleElement.setAttribute("class", "offset-xl-1 col-xl-10 lead");
               titleElement.innerText = textLabels.matrixChartTitle(landkreise[landkreisId].name, formatDate(new Date(response.data.lastCaseDate)));
-              document.getElementById("titleContainer").replaceChildren(titleElement);
+              let child;
+              const titleContainer = document.getElementById("titleContainer")
+              while (child = titleContainer.firstChild) {
+                child.remove();
+              }
+              titleContainer.appendChild(titleElement);
 
               var ctx = document.getElementById(canvasId).getContext("2d");
 
@@ -1006,7 +1011,12 @@
               const titleElement = document.createElement("h2");
               titleElement.setAttribute("class", "offset-xl-1 col-xl-10 lead");
               titleElement.innerText = textLabels.matrixChartTitle(landkreise[landkreisId].name, formatDate(new Date(lastDate)));
-              document.getElementById("titleContainer").replaceChildren(titleElement);
+              let child;
+              const titleContainer = document.getElementById("titleContainer")
+              while (child = titleContainer.firstChild) {
+                child.remove();
+              }
+              titleContainer.appendChild(titleElement);
 
               var ctx = document.getElementById(canvasId).getContext("2d");
 
