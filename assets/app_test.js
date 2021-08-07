@@ -979,7 +979,6 @@
               }
               titleContainer.appendChild(titleElement);
 
-
               try {
                 matrixChart.destroy()
               }
@@ -1070,7 +1069,6 @@
   });
 
   document.addEventListener("DOMContentLoaded", function (event) {
-
     moment.locale("de-DE");
 
     let parameters = window.location.hash.substr(1)
@@ -1116,6 +1114,19 @@
           });
 
         document.getElementById("landkreisSelect").disabled = false;
+
+        new TomSelect("#landkreisSelect", {
+          create: false,
+          maxOptions: null,
+          diacritics: true,
+          plugins: ['dropdown_input'],
+          render: {
+            no_results: function (data, escape) {
+              return '<div class="no-results">Nichts gefunden für "' + escape(data.input) + '"</div>';
+            }
+          }
+        });
+
         landkreisSelectOnChange()
 
         let x = document.getElementById("landkreisSelect").validity.valid
