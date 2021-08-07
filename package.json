@@ -1,0 +1,29 @@
+{
+  "name": "covaltvis",
+  "version": "1.0.0",
+  "description": "Visualisierung („Heatmap“) der COVID-19-Sieben-Tage-Inzidenzwerte nach Altersgruppen in den 294 Landkreisen und 107 kreisfreien Städten in Deutschland",
+  "main": "assets/app.js",
+  "dependencies": {},
+  "devDependencies": {
+    "@babel/cli": "^7.14.3",
+    "@babel/core": "^7.14.3",
+    "@babel/preset-env": "^7.14.4",
+    "browserslist": "^4.16.6",
+    "eslint": "^7.28.0",
+    "eslint-plugin-compat": "^3.9.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "babel assets -d lib"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tschach/covaltvis.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tschach/covaltvis/issues"
+  },
+  "homepage": "https://github.com/tschach/covaltvis#readme"
+}
