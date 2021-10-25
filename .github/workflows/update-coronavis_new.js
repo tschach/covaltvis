@@ -1,4 +1,4 @@
-name: Data update v2
+name: Data update v2.1
 "on":
   workflow_dispatch:
   schedule:
