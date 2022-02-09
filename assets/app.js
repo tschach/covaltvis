@@ -99,32 +99,32 @@
         {
           min: 600,
           max: 1000,
-          color: "#2e2033"
+          color: "#1f1f33"
         },
         {
           min: 1000,
           max: 1500,
-          color: "#2e1022"
+          color: "#1a1a2d"
         },
         {
           min: 1500,
           max: 2000,
-          color: "#2e0011"
+          color: "#141528"
         },
         {
           min: 2000,
           max: 2500,
-          color: "#2e0000"
+          color: "#100f23"
         },
         {
           min: 2500,
           max: 3000,
-          color: "#5e0000"
+          color: "#09061e"
         },
         {
           min: 3000,
           max: Infinity,
-          color: "#8e0000"
+          color: "#000000"
         }
 
       ]
@@ -190,32 +190,32 @@
         {
           min: 600,
           max: 1000,
-          color: "#aff024"
+          color: "#ffff00"
         },
         {
           min: 1000,
           max: 1500,
-          color: "#bff044"
+          color: "#ffff4d"
         },
         {
           min: 1500,
           max: 2000,
-          color: "#cff064"
+          color: "#ffff72"
         },
         {
           min: 2000,
           max: 2500,
-          color: "#dff084"
+          color: "#ffff92"
         },
         {
           min: 2500,
           max: 3000,
-          color: "#eff0a4"
+          color: "#ffffb0"
         },
         {
           min: 3000,
           max: Infinity,
-          color: "#fff0c4"
+          color: "#ffffcc"
         }
       ]
     },
@@ -330,32 +330,32 @@
         {
           min: 600,
           max: 1000,
-          color: "#bf0033"
+          color: "#8b0000"
         },
         {
           min: 1000,
           max: 1500,
-          color: "#bf0066"
+          color: "#710000"
         },
         {
           min: 1500,
           max: 2000,
-          color: "#bf0099"
+          color: "#570000"
         },
         {
           min: 2000,
           max: 2500,
-          color: "#bf00bb"
+          color: "#3c0000"
         },
         {
           min: 2500,
           max: 3000,
-          color: "#bf00cc"
+          color: "#220000"
         },
         {
           min: 3000,
           max: Infinity,
-          color: "#bf00ff"
+          color: "#080000"
         }
       ]
     }
