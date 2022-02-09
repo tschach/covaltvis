@@ -190,32 +190,32 @@
         {
           min: 600,
           max: 1000,
-          color: "#aff024"
+          color: "#ffff00"
         },
         {
           min: 1000,
           max: 1500,
-          color: "#bff044"
+          color: "#ffff4d"
         },
         {
           min: 1500,
           max: 2000,
-          color: "#cff064"
+          color: "#ffff72"
         },
         {
           min: 2000,
           max: 2500,
-          color: "#dff084"
+          color: "#ffff92"
         },
         {
           min: 2500,
           max: 3000,
-          color: "#eff0a4"
+          color: "#ffffb0"
         },
         {
           min: 3000,
           max: Infinity,
-          color: "#fff0c4"
+          color: "#ffffcc"
         }
       ]
     },
@@ -330,32 +330,32 @@
         {
           min: 600,
           max: 1000,
-          color: "#bf0033"
+          color: "#8b0000"
         },
         {
           min: 1000,
           max: 1500,
-          color: "#bf0066"
+          color: "#710000"
         },
         {
           min: 1500,
           max: 2000,
-          color: "#bf0099"
+          color: "#570000"
         },
         {
           min: 2000,
           max: 2500,
-          color: "#bf00bb"
+          color: "#3c0000"
         },
         {
           min: 2500,
           max: 3000,
-          color: "#bf00cc"
+          color: "#220000"
         },
         {
           min: 3000,
           max: Infinity,
-          color: "#bf00ff"
+          color: "#080000"
         }
       ]
     }
