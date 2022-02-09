@@ -99,32 +99,32 @@
         {
           min: 600,
           max: 1000,
-          color: "#2e2033"
+          color: "#1f1f33"
         },
         {
           min: 1000,
           max: 1500,
-          color: "#2e1022"
+          color: "#1a1a2d"
         },
         {
           min: 1500,
           max: 2000,
-          color: "#2e0011"
+          color: "#141528"
         },
         {
           min: 2000,
           max: 2500,
-          color: "#2e0000"
+          color: "#100f23"
         },
         {
           min: 2500,
           max: 3000,
-          color: "#5e0000"
+          color: "#09061e"
         },
         {
           min: 3000,
           max: Infinity,
-          color: "#8e0000"
+          color: "#000000"
         }
 
       ]
